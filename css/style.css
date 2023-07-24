@@ -2,10 +2,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #f8fffc;
+  box-sizing: border-box;
 }
 
 /* Contenedores "Acerca" y "Proyectos */
@@ -116,6 +118,11 @@ body {
   font-size: 22px;
   font-family: "Cairo", sans-serif;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.mi-foto {
+  border-radius: 20%;
+
 }
 
 /*# sourceMappingURL=style.css.map */
