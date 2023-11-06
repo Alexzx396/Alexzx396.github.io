@@ -122,11 +122,11 @@ body {
 
 .mi-foto {
   border-radius: 20%;
-
 }
+
 .carousel-item img {
   width: 100%; 
-  height: 420px; 
+  height: 300px; 
   object-fit: cover; 
 }
 

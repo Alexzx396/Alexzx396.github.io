@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadContent('phrase-placeholder', 'phrase.html');
     loadContent('project-placeholder', 'project.html');
     loadContent('generalProjects-placeholder', 'generalProjects.html');
-    loadContent('aboutMe-placeholder', 'aboutMe.html');
-    
+    loadContent('aboutMe-placeholder', 'aboutMe.html'); 
   });
   
