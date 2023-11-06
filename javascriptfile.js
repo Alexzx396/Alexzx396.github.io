@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  
     function loadContent(id, filePath) {
       fetch(filePath)
         .then(response => response.text())
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error(`Error loading ${id}:`, error));
     }
-
     loadContent('footer-placeholder', 'footer.html');
     loadContent('contacto-placeholder', 'contacto.html');
     loadContent('skills-placeholder', 'skills.html');
