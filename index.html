@@ -31,37 +31,37 @@
     </head>
 <body>
 <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg" id="navegador">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#home">
-                    <img src="./img-marca/Logo Alex Arce.png " width="180" alt="logo" class="logo-principal">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end textos" id="navbarNav">
-                    <ul class="navbar-nav menuItems">
-                        <li class="nav-item">
-                            <a class="nav-link animacion-nav" aria-current="page" href="#home" data-item='Home'>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animacion-nav" href="#acerca" data-item='Acerca'>Acerca</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animacion-nav" href="#proyectos" data-item='Proyectos'>Proyectos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animacion-nav" href="#skills" data-item='Skills'>Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animacion-nav" href="#contacto" data-item='Contacto'>Contacto</a>
-                        </li>
-                    </ul>
+        <header>
+            <nav class="navbar navbar-expand-lg" id="navegador">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#home">
+                        <img src="./img-marca/Logo Alex Arce.png " width="180" alt="logo" class="logo-principal">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end textos" id="navbarNav">
+                        <ul class="navbar-nav menuItems">
+                            <li class="nav-item">
+                                <a class="nav-link animacion-nav" aria-current="page" href="#home" data-item='Home'>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link animacion-nav" href="#acerca" data-item='Acerca'>Acerca</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link animacion-nav" href="#proyectos" data-item='Proyectos'>Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link animacion-nav" href="#skills" data-item='Skills'>Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link animacion-nav" href="#contacto" data-item='Contacto'>Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
         <!-- Home -->
         <section id="home">
             <div class="container-fluid">
@@ -75,7 +75,34 @@
         <!-- Main Content -->
         <main class="container-fluid">
             <!-- About Me -->
-            <section id="aboutMe-placeholder"></section>
+            <section id="acerca" class="container-fluid contenedores p-5">
+                <div class="container-fluid contenedor-interior">
+                <div class="row pb-10">
+                    <div class="col-sm-12 col-md-12 col-lg-6 text-center align-items-center my-auto">
+                    <img src="/img-marca/linkeding 32.jpg" alt="Foto de Alex Arce" width="50%" class="mi-foto text-center img-fluid pt-5" data-aos="fade-right">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 p-5">
+                    <h1 class="titulos-secciones" data-aos="fade-left">Acerca de mí</h1>
+                    <p data-aos="fade-down" class="pt-2">
+                        👋 <strong>Soy Ingeniero Agrónomo & Desarrollador Full Stack.</strong> Graduado del Bootcamp de Python (Coding Dojo), Bootcamp MERN (CoderHouse, Argentina), y Bootcamp Data Science (CoderHouse, Argentina). Actualmente, me enfoco en mi desarrollo personal como programador.
+                        <br><br>
+                        Trabajo como Desarrollador de Software en Arcadium para el juego KOE y como Freelance Full-Stack MERN para la Fundación Chilena De La Discapacidad, colaborando en la construcción de soporte técnico para crear triangulaciones entre personas con discapacidad, tutores y empresas.
+                        <br><br>
+                        <a href="https://www.indiegogo.com/projects/kingdoms-of-ereloth-rpg-survival-videogame#/">Indiegogo.com/kingdoms-of-ereloth</a><br>
+                        <a href="https://www.fchd.cl/">fchd.cl</a>
+                        <br><br>
+                        🗣️ <strong>Soft Skills:</strong><br>
+                        Professional Scrum Master Certificado (SMPC®) y Scrum Foundations Professional (SFPC®)
+                        <br><br>
+                        <strong>Contacto:</strong><br>
+                        GitHub: <a href="https://github.com/Alexzx396">https://github.com/Alexzx396</a><br>
+                        Email: <a href="mailto:arcealex257@gmail.com">arcealex257@gmail.com</a><br>
+                        WhatsApp: <a href="tel:+56986642616">+56986642616</a>.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            </section>
             <!-- General Projects -->
             <section id="generalProjects-placeholder"></section>
             <!-- Web Projects -->
@@ -95,13 +122,6 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <!-- Custom JavaScript File -->
         <script src="/js/javascriptfile.js"></script>
-        <script>
-            try {
-                AOS.init();
-            } catch (e) {
-                console.error("Error initializing AOS: ", e);
-            }
-        </script>
     </body>
 </html>
 

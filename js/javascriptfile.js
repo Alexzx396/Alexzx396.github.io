@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { id: "phrase-placeholder", filePath: "phrase.html" },
     { id: "project-placeholder", filePath: "project.html" },
     { id: "generalProjects-placeholder", filePath: "generalProjects.html" },
-    { id: "aboutMe-placeholder", filePath: "aboutMe.html" },
   ];
 
   // Inicia todas las solicitudes de fetch simultáneamente.
