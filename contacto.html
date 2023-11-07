@@ -31,31 +31,27 @@
                         </div>
                     </div>
                 <!-- FORMULARIO -->
-                <div class="col-sm-12 col-md-12 col-lg-6 pt-5">
-                    <div class="formulario textos">
-                        <!-- El formulario debe apuntar al script PHP que procesará los datos -->
-                        <form method="post" action="./PHP/contact.php">
-                            <h1 class="pb-3" data-aos="fade-down">Escríbeme</h1>
-                            <!-- Campo para el nombre -->
-                            <div class="mb-3 input-contacto" data-aos="fade-down">
-                                <label for="inputNombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="inputNombre" name="nombre" required>
-                            </div>
-                            <!-- Campo para el correo electrónico -->
-                            <div class="mb-3 input-contacto" data-aos="fade-down">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" name="email" required>
-                            </div>
-                            <!-- Campo para el mensaje -->
-                            <div class="mb-3 input-contacto" data-aos="fade-down">
-                                <label for="inputMensaje" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="inputMensaje" name="mensaje" rows="3" required></textarea>
-                            </div>
-                            <!-- Botón de enviar -->
-                            <button type="submit" class="btn" data-aos="fade-down">Enviar</button>
-                        </form>
+                    <div class="col-sm-12 col-md-12 col-lg-6 pt-5">
+                        <div class="formulario textos">
+                            <form method="post" action="/PHP/contact.php">
+                                <h1 class="pb-3" data-aos="fade-down">Escríbeme</h1>
+                                <div class="mb-3 input-contacto" data-aos="fade-down">
+                                    <label for="inputNombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="inputNombre" name="nombre" required>
+                                </div>
+                                <div class="mb-3 input-contacto" data-aos="fade-down">
+                                    <label for="inputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" name="email" required>
+                                </div>
+                                <div class="mb-3 input-contacto" data-aos="fade-down">
+                                    <label for="inputMensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="inputMensaje" name="mensaje" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn" data-aos="fade-down">Enviar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-        </div>
+        </main> 
     </div>
 </section>
