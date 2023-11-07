@@ -13,19 +13,24 @@ body {
 /* Contenedores "Acerca" y "Proyectos */
 .contenedores {
   background-color: #c56857;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .contenedores .contenedor-interior {
   background-color: #DADFE5;
   border-radius: 10px;
+  padding: 20px;
 }
 .contenedores .contenedor-interior h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 .contenedores .contenedor-interior p {
   font-size: 22px;
   font-family: "Cairo", sans-serif;
+  margin-bottom: 20px; 
+  text-align: justify;
+  
 }
 
 #navegador a {
@@ -127,6 +132,7 @@ body {
 .carousel-item img {
   width: 100%; 
   height: 400px; 
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
