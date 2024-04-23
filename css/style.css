@@ -1,138 +1,799 @@
-/* Reset */
+/* Reset CSS y configuración inicial */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilos básicos y color de fondo */
 body {
-  background-color: #f8fffc;
-  box-sizing: border-box;
+  background: #151515; /* Establece el color de fondo a negro */
+  color: #fff; /* Establece el color de texto a blanco para garantizar el contraste */
+  font-family: 'Monrope', sans-serif; /* Asegura que la fuente sea consistente */
+  background-image: url('/img/fondogradiente.png'); /* Imagen de fondo con gradiente */
+  background-size: 100%; /* Cubre todo el espacio del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: 10px 80%; 
 }
 
-/* Contenedores "Acerca" y "Proyectos */
-.contenedores {
-  background-color: #c56857;
-  border-radius: 20px;
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'dietherRound', serif; /* Fuente específica para los títulos DIETHER TTF*/
+  font-weight: bold;
 }
-.contenedores .contenedor-interior {
-  background-color: #DADFE5;
-  border-radius: 10px;
-  padding: 20px;
-}
-.contenedores .contenedor-interior h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-.contenedores .contenedor-interior p {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-  margin-bottom: 20px; 
-  text-align: justify;
+
+.contenedores .card-body {
+  padding: 50px; /* Espaciado interno generoso para el contenido */
   
 }
 
-#navegador a {
-  color: black;
-  transition: all 1s ease-in-out;
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  margin: 10px;
+.contenedores .card-title {
+  color: #87CEFA; /* Color celeste, similar a otros títulos en el sitio */
+  font-size: 30px; /* Tamaño de fuente más grande para el título */
+  margin-bottom: 45px; /* Espacio debajo del título */
+
 }
-#navegador a::before {
-  content: attr(data-item);
-  transition: all 1s ease-in-out;
-  color: #e49385;
+
+.contenedores .card-title2 {
+  color: white; /* Color celeste, similar a otros títulos en el sitio */
+  font-size: 75px; /* Tamaño de fuente más grande para el título */
+  margin-bottom: 45px; /* Espacio debajo del título */
+}
+
+
+.contenedores .card-text {
+  font-size: 20px; /* Tamaño de fuente adecuado para el texto descriptivo */
+}
+
+.contenedores .btn-primary {
+  font-size: 16px; /* Botón con fuente más grande para mejor interacción */
+}
+
+.card-title.h2 {
+  color: #FFFFFF; /* Blanco para el subtítulo */
+  font-size: 24px; /* Tamaño más pequeño para el subtítulo */
+}
+
+.steam-icon-container {
   position: absolute;
-  width: 0;
-  overflow: hidden;
-  text-decoration: overline;
+  top: 75%; /* Ajustar según la necesidad */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px; /* Tamaño del ícono */
+  color: #ffffff; /* Color del ícono */
+  z-index: 10;
 }
-#navegador a:hover::before {
+
+
+
+@media (max-width: 768px) {
+  .contenedores .card-title {
+      font-size: 18px; /* Reducir el tamaño del título para móviles */
+  }
+
+  body {
+    background-image: none; /* Elimina la imagen de fondo en dispositivos móviles */
+  }
+
+  .logo-container {
+    width: 140px; /* Más pequeño para dispositivos móviles */
+    padding-bottom: 150px; 
+  }
+
+  .contenedores .card-title2 {
+      font-size: 45px; /* Reducir el tamaño del título principal para móviles */
+  }
+
+  .contenedores .card-text {
+      font-size: 14px; /* Reducir el tamaño de la descripción para una mejor legibilidad en móviles */
+  }
+
+  /* Ajustes adicionales para mejor visualización */
+  .contenedores .card {
+      padding: 20px; /* Reducir el padding dentro de las tarjetas para ahorrar espacio */
+  }
+
+  #acerca .contenedor-interior, #proyectos .contenedor-interior {
+      padding: 10px; /* Reducir el padding general para los contenedores internos */
+  }
+
+  .button-container {
+    flex-direction: column; /* Mantiene los botones apilados verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    justify-content: center; /* Centra los botones verticalmente */
+    padding-bottom: 60px; /* Ajusta el padding para reducir el espacio */
+  }
+
+  #home .btn-primary {
+    width: 40%; /* Ajusta el ancho al contenido, o usa un valor en % o px */
+    padding: 8px 40px; /* Reduce el padding para hacer el botón físicamente más pequeño */
+    font-size: 7px; /* Tamaño de fuente más adecuado y legible */
+    margin: 5px; /* Ajusta el margen para manejar mejor el espacio */
+    border-radius: 50px; /* Puedes ajustar el border-radius si es necesario */
+  }
+
+  #home .btn-primary i {
+    display: none; /* Esto ocultará cualquier ícono dentro de los botones btn-primary */
+  }
+
+  .steam-icon-container {
+    display: none; /* Esto ocultará el icono de Steam en todas las resoluciones */
+  }
+}
+
+
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contenedores .card-title {
+      font-size: 24px; /* Más pequeño para pantallas muy pequeñas */
+  }
+
+  .contenedores .card-title2 {
+      font-size: 30px; /* Ajuste del tamaño para títulos principales en pantallas muy pequeñas */
+  }
+
+  .contenedores .card-text {
+      font-size: 24px; /* Texto más pequeño para descripciones en pantallas muy pequeñas */
+  }
+  .button-container {
+    flex-direction: column; /* Apilar los botones verticalmente */
+    align-items: center; /* Centrar los botones horizontalmente */
+    padding: 120px ;
+  }
+
+  .button-container {
+    padding: 10px; /* Menor padding en dispositivos muy pequeños */
+  }
+
+  .btn-primary {
+    width: 50%; /* Reduce el ancho para no ocupar todo el espacio disponible */
+    padding: 10px 15px; /* Reduce el padding para disminuir el tamaño total del botón */
+    font-size: 12px; /* Reduce el tamaño de la fuente para mantener la proporción */
+    margin: 5px 0; /* Reduce el margen para ajustar mejor en la pantalla */
+  }
+
+  .logo-container {
+    display: none; /* Asegura que los logos también estén ocultos en pantallas muy pequeñas */
+  }
+
+}
+
+
+/* Navegación fija con fondo semi-transparente */
+#navegador {
+  position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+  width: 100%; /* Asegura que la barra ocupe el ancho completo de la pantalla */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia media */
+  z-index: 1000; /* Alta prioridad en la pila de capas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); /* Sombra suave para mayor visibilidad sobre contenido */
+  padding: 10px 0; /* Añade un poco de espacio vertical dentro de la barra */
+}
+
+#navegador .container-fluid {
+  width: 90%; /* Ajusta el ancho del contenedor dentro de la barra */
+  margin: auto; /* Centra el contenedor horizontalmente */
+}
+
+#navegador a {
+  color: white; /* Establece el color de texto a blanco */
+  font-size: 20px; /* Tamaño de la fuente */
+  font-weight: 900; /* Peso de la fuente más grueso para mejorar la visibilidad */
+  margin: 10px;
+  text-decoration: none; /* Elimina cualquier subrayado por defecto */
+  transition: color 0.3s ease-in-out; /* Suaviza la transición de color */
+}
+
+#navegador a:hover {
+  color: #87CEFA; /* Color celeste en hover */
+}
+
+/* Ajuste de imagen y logo en la barra de navegación */
+.navbar-brand img {
+  width: 100%;
+  max-width: 180px; /* Limita el tamaño máximo del logo */
+  height: 100%;
+}
+
+/* Mejora la visibilidad de los enlaces en dispositivos pequeños */
+#navegador .nav-link {
+  font-size: 16px; /* Ajusta según sea necesario para mejorar la legibilidad */
+  margin: 5px;
+  padding: 5px;
+}
+
+.navbar-nav .nav-link h5 {
+  border-bottom: 7px solid transparent; /* Mantiene el diseño consistente sin color */
+  transition: border-color 0.3s ease; /* Suaviza la transición del color del borde */
+  padding-bottom: 20px; /* Espacio suficiente para la línea sin que toque el texto */
+}
+
+.navbar-nav .nav-link:hover h5,
+.navbar-nav .nav-link.active h5 { /* Estilos para hover y enlaces activos */
+  border-bottom: 7px solid #C779D0; /* Barra rosada para elementos activos y en hover */
+}
+
+/* Media query para ajustes en dispositivos pequeños */
+@media (max-width: 768px) {
+  /* Muestra el botón de navegación (hamburguesa) */
+  .navbar-toggler {
+    display: block; /* Asegura que el toggler se muestre en dispositivos pequeños */
+
+  }
+
+  /* Ajustes para el menú desplegable */
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el menú desplegable para mejorar la legibilidad */
+  }
+
+  /* Ajusta el padding del contenedor del navegador para alinear correctamente los elementos dentro de él */
+  #navegador .container-fluid {
+    padding: 0 15px; /* Ajusta el padding para dispositivos más pequeños */
+  }
+
+  /* Hace que el fondo del navegador sea transparente y elimina cualquier sombra para un look más limpio */
+  #navegador {
+    background-color: transparent; /* Elimina el fondo */
+    box-shadow: none; /* Elimina la sombra */
+  }
+
+  /* Oculta el logo en dispositivos pequeños */
+  .navbar-brand {
+    display: none; /* Oculta el logo */
+  }
+
+  .home-image img {
+    width: 100%; /* Asegura que la imagen cubra completamente el ancho */
+    height: auto;/* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio adicional si es necesario */
+  }
+}
+
+
+
+/* Estilos básicos para el footer */
+#footer {
+  color: #fff; /* Texto en blanco para alto contraste */
+  padding: 20px; /* Reducción del padding vertical para reducir el espacio total */
+  text-align: center; /* Centrado del texto */
+  background-image: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e); /* Gradiente de fondo */
+}
+
+#footer .container {
+  width: 50%; /* Ajuste de ancho a full */
+  margin: auto; /* Centrado automático */
+}
+
+#footer .centered-logo {
+  display: block; /* Asegura que el logo es un bloque para centrarlo */
+  margin: 0 auto 10px; /* Reducción del margen inferior para acercar el logo al texto */
+  width: 7%; /* Tamaño del logo basado en el porcentaje del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin-top: 40px; /* Reducción del margen superior para acercar las líneas de texto */
+}
+
+#footer h4 {
+  font-size: 16px; /* Tamaño de fuente para legibilidad */
+  line-height: 0.1; /* Reducción del espaciado de línea para juntar más el texto */
+  margin-top: 10px; /* Reducción del margen superior para acercar las líneas de texto */
+  margin-bottom: 10px; /* Reducción del margen inferior */
+}
+
+#footer .footer-link {
+  color: #fff; /* Color blanco para los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: color 0.3s ease; /* Transición suave para los cambios de color */
+}
+
+#footer .footer-link:hover {
+  color: #4bc0c8; /* Cambia el color al pasar el ratón */
+}
+
+
+/* Media Queries para adaptación a dispositivos móviles */
+@media (max-width: 768px) {
+  #footer {
+    padding: 10px; /* Reduce el padding en dispositivos móviles */
+  }
+
+  #footer .container {
+    padding: 0 10px; /* Reduce el padding para los contenedores en dispositivos móviles */
+  }
+
+  #footer .centered-logo {
+    width: 80px; /* Reduce el tamaño del logo para dispositivos móviles */
+  }
+
+  #footer h4, #footer p {
+    font-size: 12px; /* Reduce el tamaño de fuente para mejor legibilidad en pantallas pequeñas */
+  }
+}
+
+
+
+/* Estilos adicionales para mantener la coherencia */
+#navegador a, #footer p {
+  color: #fff; /* Asegura que los enlaces y textos en estas áreas sean blancos */
+}
+
+
+.home-image {
+  position: relative; /* Posición relativa para posicionar absolutamente los botones dentro */
+  width: 100%; /* Asegura que la imagen cubra el ancho del contenedor */
+  height: auto; /* Altura automática basada en la imagen */
+}
+
+.background-image {
+  width: 100%; /* Asegura que la imagen cubra el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina cualquier espacio extra */
+}
+
+.button-container {
+  position: absolute;
+  top: 88%; /* Ajustado de 50% a 60% para mover los botones más abajo */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
-.animaciones:hover {
+.btn-primary {
+  
+  background-color: #000; /* Fondo negro */
+  color: white; /* Texto en color blanco */
+  border: 1px solid #c779d0; /* Sin borde */
+  border-radius: 50px; /* Bordes redondeados */
+  margin: 10px; /* Margen alrededor del botón */
+  transition: all 0.3s ease; /* Transición suave para efectos de hover u otros cambios */
+  padding: 16px 32px; /* Padding para hacer el botón más grande y cómodo al clic */
+  width: 200px; /* Ancho fijo para todos los botones */
+}
+
+
+.btn-primary:hover {
+  background-image: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+  color: black;
   transform: scale(1.1);
-  transition: all 1s;
 }
 
-#skills h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
+/* Ajustes para dispositivos móviles para los botones */
+@media (max-width: 768px) {
+  .button-container {
+    top: 70%; /* Posición aún más baja para dispositivos móviles */
+    flex-direction: column; /* Los botones se apilan verticalmente */
+    gap: 10px; /* Espacio entre botones cuando están apilados */
+  }
+
+  .btn-primary {
+    width: 90%; /* Los botones ocupan más ancho para facilitar la interacción táctil */
+    margin-bottom: 10px; /* Espacio entre botones cuando están apilados */
+  }
 }
 
-#frase .container-fluid {
-  background-color: #c56857;
-  border-radius: 10px;
-  padding: 100px 0px;
-}
-#frase .container-fluid h2 {
-  font-style: italic;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  color: #b8d6c7;
-}
-#frase .container-fluid p {
-  font-style: normal;
-  font-size: 100px;
+
+/* Estilos específicos para la sección 'Acerca' */
+#acerca .contenedor-interior {
+  text-align: right; /* Alinea todo el contenido a la derecha */
 }
 
-#contacto .container-fluid {
-  margin-bottom: 70px;
-}
-#contacto .container-fluid h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-}
-#contacto .container-fluid p {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-}
-#contacto .container-fluid .animaciones-contacto:hover {
-  transform: scale(1.5);
-  transition: all 0.7s;
-}
-#contacto .container-fluid .input-contacto {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-}
-#contacto .container-fluid .input-contacto .form-control:focus {
-  outline: #345B48 4px solid;
-  border: 0;
-}
-#contacto .container-fluid button {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-  background-color: #DADFE5;
-  color: #345B48;
-}
-#contacto .container-fluid button:hover {
-  transform: scale(1.02);
-  transition: all 0.5s;
-  background-color: #365e4b;
-  color: white;
+#acerca .contenedor-interior .btn-primary {
+  display: inline-block; /* Mantiene el botón en línea con el texto */
+  margin-top: 20px; /* Espacio adicional sobre el botón si es necesario */
 }
 
-#footer {
-  background-color: #c56857;
-}
-#footer p {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-  color: rgba(255, 255, 255, 0.5);
+#acerca .contenedor-interior h1 {
+  color: white; /* Color celeste para 'Bienvenido a' */
+  font-size: 135px; /* Tamaño inicial grande para pantallas más grandes */
 }
 
-.mi-foto {
-  border-radius: 20%;
+#acerca .contenedor-interior h2 {
+  color: #4bc0c8; /* Color celeste para 'Bienvenido a' */
+  font-size: 35px; /* Tamaño inicial grande para pantallas más grandes */
 }
 
-.carousel-item img {
-  width: 100%; 
-  height: 400px; 
-  object-fit: cover;
+#acerca .contenedor-interior p {
+  font-size: 20px; /* Tamaño de fuente estándar para el texto */
+  color: #FFFFFF; /* Establece el color del texto a blanco, si el fondo es oscuro */
+  line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
+  letter-spacing: 0.5px; /* Espaciado entre letras para una presentación más clara */
+  text-align: right; /* Alinea todo el contenido a la derecha */
 }
 
-/*# sourceMappingURL=style.css.map */
+
+#acerca .contenedor-interior p strong {
+  font-size: 160px; /* Tamaño destacado para 'EtherDreams' */
+  color: white; /* Color blanco para resaltar 'EtherDreams' */
+  text-align: right; /* Alinea todo el contenido a la derecha */
+}
+
+.pt-2 strong {
+  display: block;  /* Hace que cada palabra sea un bloque, forzándolos a la siguiente línea */
+  line-height: 1.1; /* Reduce el espacio entre líneas para que estén más juntas */
+  margin-bottom: 0.5rem; /* Espacio adicional después del texto, si necesario */
+}
+
+/* Estilo para la imagen en la sección 'Acerca' */
+#acerca .mi-foto {
+  width: 50%; /* Ancho relativo para adaptarse al contenedor */
+  max-width: 600px; /* Máximo ancho para evitar que la imagen sea demasiado grande */
+  height: auto; /* Altura automática para mantener la proporción de la imagen */
+  border-radius: 20%; /* Bordes redondeados para un estilo suave */
+  margin: auto; /* Centrado automático dentro de su contenedor */
+  display: block; /* Bloque para evitar comportamientos inline */
+}
+
+
+/* Media Queries para ajustar la sección en dispositivos móviles */
+@media (max-width: 768px) {
+  #acerca .mi-foto {
+    width: 50%; /* Reducción del ancho de la imagen para mejor adaptación en pantallas más pequeñas */
+  }
+
+  #acerca .contenedor-interior h1 {
+    font-size: 24px; /* Reduce el tamaño de fuente para el título */
+  }
+
+  #acerca .contenedor-interior p, #acerca .contenedor-interior .card-text2 {
+    font-size: 16px; /* Reduce el tamaño de fuente para los párrafos */
+  }
+
+  #acerca .pt-2 strong {
+    display: block;  /* Hace que cada palabra sea un bloque, forzándolos a la siguiente línea */
+    line-height: 0.8; /* Reduce el espacio entre líneas para que estén más juntas */
+    margin-bottom: 0.5rem; /* Espacio adicional después del texto, si necesario */
+
+}
+
+  #acerca .contenedor-interior {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+}
+
+@media (max-width: 480px) {
+  #acerca .mi-foto {
+    width: 80%; /* Aumento del ancho de la imagen para ocupar más espacio visualmente en pantallas muy pequeñas */
+  }
+
+
+    #acerca .contenedor-interior h1 {
+      font-size: 20px; /* Más pequeño para dispositivos muy pequeños */
+    }
+  
+    #acerca .contenedor-interior p, #acerca .contenedor-interior .card-text2 {
+      font-size: 14px; /* Texto más pequeño para descripciones en pantallas muy pequeñas */
+    }
+  
+}
+
+.logo-container {
+  position: absolute; /* Posicionamiento absoluto para el logo */
+  top: 40%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste fino para centrar exactamente */
+  z-index: 10; /* Asegura que el logo esté sobre el fondo */
+}
+
+
+/* Estilos para las tarjetas dentro de contenedores */
+.contenedores .card {
+  position: relative; /* Posicionamiento necesario para elementos absolutamente posicionados */
+  background-color: rgba(54, 65, 65, 0.8); /* Fondo oscuro con transparencia */
+  border-radius: 100px; /* Bordes más redondeados */
+  border: 8px solid ; /* Borde transparente para no mostrar color de borde sólido */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar las tarjetas */
+  color: white; /* Texto en color blanco */
+  margin: 60px; /* Aumenta significativamente el margen inferior para separar más las tarjetas */
+  padding: 10px 40px; /* Padding adecuado para tamaño interno */
+  min-height: 250px; /* Altura mínima adecuada */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-image: url('/img/BordeRGB.png') 1 stretch; /* Usa la imagen como borde */
+}
+
+
+
+
+.contenedores .card-icon {
+  position: absolute;
+  top: -240px; /* Ajusta según el tamaño del ícono */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* O el tamaño deseado */
+  height: auto;
+}
+
+
+/* Estilos para los títulos y textos dentro de las tarjetas */
+.contenedores .card-title {
+  color: #FCD569; /* Color celeste para los nombres */
+  font-size: 40px; /* Ajuste de tamaño de fuente para los nombres */
+  margin-bottom: 10px; /* Reducir el espacio entre el título y el subtítulo */
+  margin-top: 60px; /* Reducir el espacio entre el título y el subtítulo */
+}
+
+.contenedores .card-title2 {
+  color: #FFFFFF; /* Blanco para títulos principales */
+  font-size: 80px; /* Tamaño de fuente más grande para títulos principales */
+  margin-bottom: 10px; /* Reducir el espacio entre el título y el subtítulo */
+
+}
+
+.contenedores .card-text {
+  font-size: 18px; /* Tamaño de fuente para los textos descriptivos */
+  margin-bottom: 10px; /* Reducir el espacio entre el título y el subtítulo */
+}
+
+.contenedores .card-title.proyects-title {
+  color: #BABAED; /* Cambia este valor al color deseado */
+}
+
+/* Botones de redes sociales dentro de las tarjetas */
+.btn-social {
+  font-size: 20px; /* Tamaño de fuente para los botones de redes sociales */
+  padding: 10px 20px; /* Padding reducido para los botones */
+  margin-right: 5px; /* Menor espacio entre botones de redes sociales */
+  border-radius: 30px; /* Bordes más redondeados */
+}
+
+.btn-social i {
+  font-size: 20px; /* Tamaño del icono dentro del botón */
+}
+
+/* Estilo al pasar el mouse sobre los botones */
+.btn-social:hover {
+  background-color: #59B8C9; /* Color al pasar el mouse */
+  color: #000; /* Texto en negro para contraste */
+}
+
+/* Media queries para adaptar las tarjetas en dispositivos móviles */
+@media (max-width: 768px) {
+  .contenedores .card {
+    padding: 5px 10px;
+    margin: 20px 10px;
+    min-height: 200px;
+  }
+
+  .contenedores .card-icon {
+    top: -80px; /* Ajusta la posición superior para dispositivos móviles */
+  }
+
+  .contenedores .card-title {
+    font-size: 20px;
+  }
+
+  .contenedores .card-title2 {
+    font-size: 28px;
+  }
+
+  .contenedores .card-text {
+    font-size: 16px;
+  }
+
+  .btn-social {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contenedores .card-icon {
+    top: -10px; /* Posiciona la imagen aún más cerca del borde superior */
+  }
+}
+
+
+
+
+/* Estilo básico del botón */
+.contenedores .btn-primary {
+  font-size: 18px; /* Tamaño de fuente más grande para una mejor interacción */
+  background-image: linear-gradient(to right, #4bc0c8,  #c779d0 , #feac5e); /* Fondo rosa inicial */
+  color: White; /* Color del texto */
+  border: none; /* Remueve el borde predeterminado */
+  border-radius: 25px; /* Bordes más redondeados */
+  transition: all 0.3s ease; /* Transición suave para efectos de fondo y transformaciones */
+}
+
+/* Estilo del botón al pasar el mouse */
+.contenedores .btn-primary:hover {
+  background-image: linear-gradient(to right,  #feac5e, #c779d0, #4bc0c8); /* Degradado de rosa a celeste */
+  color: black; /* Cambia el color del texto a algo más oscuro para contraste */
+  transform: scale(1.1); /* Hace que el botón crezca */
+}
+
+/* Estilo específico para los botones de redes sociales */
+.btn-social {
+  font-size: 24px; /* Tamaño del icono más grande */
+  border-radius: 30px; /* Bordes más redondeados para un aspecto suave */
+  transition: all 0.3s ease; /* Transición suave para efectos de hover */
+}
+
+.btn-social i {
+  font-size: 24px; /* Asegura que el tamaño del icono sea adecuado */
+  visibility: visible; /* Asegura que el icono sea siempre visible */
+}
+
+.btn-social:hover {
+  transform: scale(1.1); /* Efecto de crecimiento al pasar el mouse */
+  background-image: linear-gradient(to right, #4bc0c8,  #c779d0 , #feac5e); /* Degradado atractivo en hover */
+  color: black; /* Cambio de color del icono para mejorar contraste en hover */
+}
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .btn-social {
+    font-size: 20px; /* Reduce el tamaño de la fuente para adaptarse a la pantalla */
+    padding: 25px 55px; /* Ajusta el padding para mantener la proporción */
+    width: auto; /* Ajusta el ancho automáticamente según el contenido */
+  }
+
+  .btn-social i {
+    font-size: 20px; /* Ajusta el tamaño del ícono para mantener la proporción */
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .btn-social {
+    font-size: 18px; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    padding: 10px 20px; /* Reduce aún más el padding para adaptarse a pantallas pequeñas */
+  }
+
+  .btn-social i {
+    font-size: 18px; /* Reduce el tamaño del ícono para mejorar la proporción */
+  }
+}
+
+
+
+/* Estilo general de la sección del equipo */
+#nuestro-equipo {
+  text-align: center; /* Asegura que todo el contenido esté centrado */
+  padding: 50px 0; /* Agrega un poco de espacio alrededor de toda la sección */
+
+}
+
+/* Estilo de las tarjetas del equipo */
+#nuestro-equipo .card {
+  width: 300px; /* Reducido de 350px para un mejor ajuste */
+  margin: 20px auto; /* Menor espacio para más tarjetas en pantalla */
+  border-radius: 50%; /* Mantiene la forma redonda */
+  overflow: hidden; /* Mantiene la imagen dentro de los límites de la tarjeta */
+  background-color: #282828; /* Fondo oscuro para las tarjetas para mejor contraste */
+}
+
+#nuestro-equipo .card-img-top {
+  width: 100%; /* Completa el ancho de la tarjeta */
+  height: 300px; /* Reducido de 350px para un ajuste más uniforme */
+  object-fit: cover; /* Asegura que la imagen cubra correctamente */
+}
+
+#nuestro-equipo .card-title {
+  font-size: 24px; /* Ligeramente más pequeño para ajustar el espacio */
+  color: #C27CD0; /* Color único para el título */
+  margin-top: 10px; /* Espacio después de la imagen */
+}
+
+#nuestro-equipo .card-text {
+  font-size: 18px; /* Aumento del tamaño para mejor legibilidad */
+  color: #fff; /* Color blanco para el texto para contraste */
+}
+
+/* Títulos de la sección */
+#nuestro-equipo h2 {
+  font-size: 36px; /* Más grande para mayor impacto visual */
+  color: white; /* Mantiene el color personalizado */
+  margin-bottom: 20px; /* Espacio antes de las tarjetas */
+}
+
+#nuestro-equipo h1 {
+  font-size: 100px; /* Reducido para una mejor proporción */
+  color: #C27CD0; /* Mantiene el color personalizado */
+  margin-bottom: 40px; /* Espacio antes de las tarjetas */
+}
+
+#home .text-container {
+  text-align: left; /* Alinea el texto a la izquierda dentro de su contenedor */
+  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  padding: 20px; /* Opcional: añade algo de padding para evitar que el texto toque los bordes */
+}
+
+/* Asegura que el contenedor principal siga centrado */
+#home .container-fluid {
+  text-align: center;
+}
+
+/* Estilos específicos para los títulos */
+#home h2, #home h1 {
+  text-align: left; /* Asegura que los títulos también estén alineados a la izquierda */
+}
+
+#home-nosotros .text-container {
+  text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+  width: 80%; /* Establece el ancho del contenedor a un porcentaje del ancho total para centrar el contenido */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Opcional: añade algo de espacio interno alrededor del contenido */
+}
+
+#home-nosotros h2, #home-nosotros h1 {
+  text-align: left; /* Asegura que los títulos también estén alineados a la izquierda */
+}
+
+/* Estilos para la sección "Home" */
+#home .background-container {
+  position: relative;
+  width: 100%;
+}
+
+#home .text-container {
+  position: absolute;
+  margin-top: -20%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 40%; /* Ajusta según el ancho deseado para el texto */
+  color: white; /* Asegúrate de que el texto sea legible sobre la imagen de fondo */
+}
+
+#home h2, #home h1, #home p {
+  margin: 10px 0; /* Espaciado uniforme entre elementos de texto */
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+#home h2 {
+  font-size: 35px;
+  color: #87CEFA; /* Color para el subtítulo */
+}
+
+#home h1 {
+  font-size: 150px; /* Tamaño más grande para mayor impacto visual */
+}
+
+#home p {
+  font-size: 19px; /* Tamaño adecuado para el texto descriptivo */
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 768px) {
+  #home .text-container {
+      width: 90%; /* Aumenta el ancho para facilitar la lectura */
+      top: 210%; /* Baja el texto para evitar que esté demasiado arriba */
+      left: 45%; /* Ajusta para centrar */
+      transform: translate(-50%, -50%); /* Asegura centrado perfecto */
+  }
+
+  #home h1 {
+      font-size: 45px; /* Tamaño de fuente más pequeño para pantallas medianas */
+  }
+
+  #home h2 {
+      font-size: 20px; /* Tamaño de fuente ajustado para subtítulos */
+  }
+
+  #home p {
+      font-size: 13px; /* Tamaño de fuente ajustado para texto descriptivo */
+  }
+}
+
+@media (max-width: 480px) {
+  #home .text-container {
+      top: 70%; /* Ajusta aún más abajo para pantallas pequeñas */
+  }
+
+  #home h1 {
+      font-size: 50px; /* Tamaño más pequeño para pantallas pequeñas */
+  }
+
+  #home h2 {
+      font-size: 25px; /* Subtítulo más pequeño para mejorar legibilidad */
+  }
+}

@@ -1,0 +1,151 @@
+/* Reset CSS y configuración inicial */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos básicos y color de fondo */
+body {
+  background: #151515; /* Establece el color de fondo a negro */
+  color: #fff; /* Establece el color de texto a blanco para garantizar el contraste */
+  font-family: 'Monrope', sans-serif; /* Asegura que la fuente sea consistente */
+  background-image: url('/img/fondogradiente.png'); /* Imagen de fondo con gradiente */
+  background-size: 100%; /* Cubre todo el espacio del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: 10px 80%; 
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'dietherRound', serif; /* Fuente específica para los títulos DIETHER TTF*/
+  font-weight: bold;
+}
+
+
+.contenedores .card-body {
+  padding: 50px; /* Espaciado interno generoso para el contenido */
+  
+}
+
+.contenedores .card-title {
+  color: #87CEFA; /* Color celeste, similar a otros títulos en el sitio */
+  font-size: 30px; /* Tamaño de fuente más grande para el título */
+  margin-bottom: 45px; /* Espacio debajo del título */
+
+}
+
+.contenedores .card-title2 {
+  color: white; /* Color celeste, similar a otros títulos en el sitio */
+  font-size: 75px; /* Tamaño de fuente más grande para el título */
+  margin-bottom: 45px; /* Espacio debajo del título */
+}
+
+
+.contenedores .card-text {
+  font-size: 20px; /* Tamaño de fuente adecuado para el texto descriptivo */
+}
+
+.contenedores .btn-primary {
+  font-size: 16px; /* Botón con fuente más grande para mejor interacción */
+}
+
+.card-title.h2 {
+  color: #FFFFFF; /* Blanco para el subtítulo */
+  font-size: 24px; /* Tamaño más pequeño para el subtítulo */
+}
+
+.steam-icon-container {
+  position: absolute;
+  top: 75%; /* Ajustar según la necesidad */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px; /* Tamaño del ícono */
+  color: #ffffff; /* Color del ícono */
+  z-index: 10;
+}
+
+/* Estilos adicionales para mantener la coherencia */
+#navegador a, #footer p {
+  color: #fff; /* Asegura que los enlaces y textos en estas áreas sean blancos */
+}
+
+
+@media (max-width: 768px) {
+  .contenedores .card-title {
+      font-size: 18px; /* Reducir el tamaño del título para móviles */
+  }
+
+  body {
+    background-image: none; /* Elimina la imagen de fondo en dispositivos móviles */
+  }
+
+  .logo-container {
+    width: 140px; /* Más pequeño para dispositivos móviles */
+    padding-bottom: 85%; 
+  }
+
+
+  .button-container {
+    flex-direction: column; /* Mantiene los botones apilados verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    justify-content: center; /* Centra los botones verticalmente */
+    padding-bottom: 115%; /* Ajusta el padding para reducir el espacio */
+  }
+
+  #home .btn-primary {
+    width: 50%; /* Ajusta el ancho al contenido, o usa un valor en % o px */
+    padding: 5px 45px; /* Reduce el padding para hacer el botón físicamente más pequeño */
+    font-size: 7px; /* Tamaño de fuente más adecuado y legible */
+    margin: 5px; /* Ajusta el margen para manejar mejor el espacio */
+    border-radius: 50px; /* Puedes ajustar el border-radius si es necesario */
+  }
+
+  #home .btn-primary i {
+    display: none; /* Esto ocultará cualquier ícono dentro de los botones btn-primary */
+  }
+
+  .steam-icon-container {
+    display: none; /* Esto ocultará el icono de Steam en todas las resoluciones */
+  }
+
+}
+
+
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contenedores .card-title {
+      font-size: 24px; /* Más pequeño para pantallas muy pequeñas */
+  }
+
+  .contenedores .card-title2 {
+      font-size: 30px; /* Ajuste del tamaño para títulos principales en pantallas muy pequeñas */
+  }
+
+  .contenedores .card-text {
+      font-size: 24px; /* Texto más pequeño para descripciones en pantallas muy pequeñas */
+  }
+  .button-container {
+    flex-direction: column; /* Apilar los botones verticalmente */
+    align-items: center; /* Centrar los botones horizontalmente */
+    padding: 120px ;
+  }
+
+  .button-container {
+    padding: 10px; /* Menor padding en dispositivos muy pequeños */
+  }
+
+  .btn-primary {
+    width: 50%; /* Reduce el ancho para no ocupar todo el espacio disponible */
+    padding: 10px 15px; /* Reduce el padding para disminuir el tamaño total del botón */
+    font-size: 12px; /* Reduce el tamaño de la fuente para mantener la proporción */
+    margin: 5px 0; /* Reduce el margen para ajustar mejor en la pantalla */
+  }
+
+  .logo-container {
+    display: none; /* Asegura que los logos también estén ocultos en pantallas muy pequeñas */
+  }
+
+
+}
+

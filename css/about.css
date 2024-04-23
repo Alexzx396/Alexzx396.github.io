@@ -1,0 +1,96 @@
+/* Estilos específicos para la sección 'Acerca' */
+#acerca .contenedor-interior {
+  text-align: right; /* Alinea todo el contenido a la derecha */
+}
+
+#acerca .contenedor-interior .btn-primary {
+  display: inline-block; /* Mantiene el botón en línea con el texto */
+  margin-top: 20px; /* Espacio adicional sobre el botón si es necesario */
+}
+
+#acerca .contenedor-interior h1 {
+  color: white; /* Color celeste para 'Bienvenido a' */
+  font-size: 135px; /* Tamaño inicial grande para pantallas más grandes */
+}
+
+#acerca .contenedor-interior h2 {
+  color: #4bc0c8; /* Color celeste para 'Bienvenido a' */
+  font-size: 35px; /* Tamaño inicial grande para pantallas más grandes */
+}
+
+#acerca .contenedor-interior p {
+  font-size: 20px; /* Tamaño de fuente estándar para el texto */
+  color: #FFFFFF; /* Establece el color del texto a blanco, si el fondo es oscuro */
+  line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
+  letter-spacing: 0.5px; /* Espaciado entre letras para una presentación más clara */
+  text-align: right; /* Alinea todo el contenido a la derecha */
+}
+
+
+#acerca .contenedor-interior p strong {
+  font-size: 160px; /* Tamaño destacado para 'EtherDreams' */
+  color: white; /* Color blanco para resaltar 'EtherDreams' */
+  text-align: right; /* Alinea todo el contenido a la derecha */
+}
+
+.pt-2 strong {
+  display: block;  /* Hace que cada palabra sea un bloque, forzándolos a la siguiente línea */
+  line-height: 1.1; /* Reduce el espacio entre líneas para que estén más juntas */
+  margin-bottom: 0.5rem; /* Espacio adicional después del texto, si necesario */
+}
+
+/* Estilo para la imagen en la sección 'Acerca' */
+#acerca .mi-foto {
+  width: 50%; /* Ancho relativo para adaptarse al contenedor */
+  max-width: 600px; /* Máximo ancho para evitar que la imagen sea demasiado grande */
+  height: auto; /* Altura automática para mantener la proporción de la imagen */
+  border-radius: 20%; /* Bordes redondeados para un estilo suave */
+  margin: auto; /* Centrado automático dentro de su contenedor */
+  display: block; /* Bloque para evitar comportamientos inline */
+}
+
+
+/* Media Queries para ajustar la sección en dispositivos móviles */
+@media (max-width: 768px) {
+  #acerca .mi-foto {
+    width: 50%; /* Reducción del ancho de la imagen para mejor adaptación en pantallas más pequeñas */
+  }
+
+  #acerca .contenedor-interior h1 {
+    font-size: 24px; /* Reduce el tamaño de fuente para el título */
+  }
+
+  #acerca .contenedor-interior p, #acerca .contenedor-interior .card-text2 {
+    font-size: 16px; /* Reduce el tamaño de fuente para los párrafos */
+  }
+
+  #acerca .pt-2 strong {
+    display: block;  /* Hace que cada palabra sea un bloque, forzándolos a la siguiente línea */
+    line-height: 0.8; /* Reduce el espacio entre líneas para que estén más juntas */
+    margin-bottom: 0.5rem; /* Espacio adicional después del texto, si necesario */
+
+}
+
+  #acerca .contenedor-interior {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 100%; /* Espacio adicional después del texto, si necesario */
+  }
+}
+
+@media (max-width: 480px) {
+  #acerca .mi-foto {
+    width: 80%; /* Aumento del ancho de la imagen para ocupar más espacio visualmente en pantallas muy pequeñas */
+  }
+
+
+    #acerca .contenedor-interior h1 {
+      font-size: 20px; /* Más pequeño para dispositivos muy pequeños */
+    }
+  
+    #acerca .contenedor-interior p, #acerca .contenedor-interior .card-text2 {
+      font-size: 14px; /* Texto más pequeño para descripciones en pantallas muy pequeñas */
+    }
+  
+}

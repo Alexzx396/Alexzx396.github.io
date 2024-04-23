@@ -1,0 +1,143 @@
+
+/* Estilo general de la sección del equipo */
+#nuestro-equipo {
+    text-align: center; /* Asegura que todo el contenido esté centrado */
+    padding: 50px 0; /* Agrega un poco de espacio alrededor de toda la sección */
+  
+  }
+  
+  /* Estilo de las tarjetas del equipo */
+  #nuestro-equipo .card {
+    width: 300px; /* Reducido de 350px para un mejor ajuste */
+    margin: 20px auto; /* Menor espacio para más tarjetas en pantalla */
+    border-radius: 50%; /* Mantiene la forma redonda */
+    overflow: hidden; /* Mantiene la imagen dentro de los límites de la tarjeta */
+    background-color: #282828; /* Fondo oscuro para las tarjetas para mejor contraste */
+  }
+  
+  #nuestro-equipo .card-img-top {
+    width: 100%; /* Completa el ancho de la tarjeta */
+    height: 300px; /* Reducido de 350px para un ajuste más uniforme */
+    object-fit: cover; /* Asegura que la imagen cubra correctamente */
+  }
+  
+  #nuestro-equipo .card-title {
+    font-size: 24px; /* Ligeramente más pequeño para ajustar el espacio */
+    color: #C27CD0; /* Color único para el título */
+    margin-top: 10px; /* Espacio después de la imagen */
+  }
+  
+  #nuestro-equipo .card-text {
+    font-size: 18px; /* Aumento del tamaño para mejor legibilidad */
+    color: #fff; /* Color blanco para el texto para contraste */
+  }
+  
+  /* Títulos de la sección */
+  #nuestro-equipo h2 {
+    font-size: 36px; /* Más grande para mayor impacto visual */
+    color: white; /* Mantiene el color personalizado */
+    margin-bottom: 20px; /* Espacio antes de las tarjetas */
+  }
+  
+  #nuestro-equipo h1 {
+    font-size: 100px; /* Reducido para una mejor proporción */
+    color: #C27CD0; /* Mantiene el color personalizado */
+    margin-bottom: 40px; /* Espacio antes de las tarjetas */
+  }
+  
+  #home .text-container {
+    text-align: left; /* Alinea el texto a la izquierda dentro de su contenedor */
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Opcional: añade algo de padding para evitar que el texto toque los bordes */
+  }
+  
+  /* Asegura que el contenedor principal siga centrado */
+  #home .container-fluid {
+    text-align: center;
+  }
+  
+  /* Estilos específicos para los títulos */
+  #home h2, #home h1 {
+    text-align: left; /* Asegura que los títulos también estén alineados a la izquierda */
+  }
+  
+  #home-nosotros .text-container {
+    text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+    width: 80%; /* Establece el ancho del contenedor a un porcentaje del ancho total para centrar el contenido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Opcional: añade algo de espacio interno alrededor del contenido */
+  }
+  
+  #home-nosotros h2, #home-nosotros h1 {
+    text-align: left; /* Asegura que los títulos también estén alineados a la izquierda */
+  }
+  
+  /* Estilos para la sección "Home" */
+  #home .background-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  #home .text-container {
+    position: absolute;
+    margin-top: -20%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 40%; /* Ajusta según el ancho deseado para el texto */
+    color: white; /* Asegúrate de que el texto sea legible sobre la imagen de fondo */
+  }
+  
+  #home h2, #home h1, #home p {
+    margin: 10px 0; /* Espaciado uniforme entre elementos de texto */
+    text-align: left; /* Alineación del texto a la izquierda */
+  }
+  
+  #home h2 {
+    font-size: 35px;
+    color: #87CEFA; /* Color para el subtítulo */
+  }
+  
+  #home h1 {
+    font-size: 150px; /* Tamaño más grande para mayor impacto visual */
+  }
+  
+  #home p {
+    font-size: 19px; /* Tamaño adecuado para el texto descriptivo */
+  }
+  
+  /* Media Queries para mejorar la responsividad */
+  @media (max-width: 768px) {
+    #home .text-container {
+        width: 90%; /* Aumenta el ancho para facilitar la lectura */
+        top: 60%; /* Baja el texto para evitar que esté demasiado arriba */
+        left: 45%; /* Ajusta para centrar */
+        transform: translate(-50%, -50%); /* Asegura centrado perfecto */
+    }
+  
+    #home h1 {
+        font-size: 45px; /* Tamaño de fuente más pequeño para pantallas medianas */
+    }
+  
+    #home h2 {
+        font-size: 20px; /* Tamaño de fuente ajustado para subtítulos */
+    }
+  
+    #home p {
+        font-size: 13px; /* Tamaño de fuente ajustado para texto descriptivo */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #home .text-container {
+        top: 70%; /* Ajusta aún más abajo para pantallas pequeñas */
+    }
+  
+    #home h1 {
+        font-size: 50px; /* Tamaño más pequeño para pantallas pequeñas */
+    }
+  
+    #home h2 {
+        font-size: 25px; /* Subtítulo más pequeño para mejorar legibilidad */
+    }
+  }

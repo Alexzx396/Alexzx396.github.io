@@ -1,0 +1,58 @@
+
+/* Estilos básicos para el footer */
+#footer {
+  color: #fff; /* Texto en blanco para alto contraste */
+  padding: 20px; /* Reducción del padding vertical para reducir el espacio total */
+  text-align: center; /* Centrado del texto */
+  background-image: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e); /* Gradiente de fondo */
+}
+
+#footer .container {
+  width: 50%; /* Ajuste de ancho a full */
+  margin: auto; /* Centrado automático */
+}
+
+#footer .centered-logo {
+  display: block; /* Asegura que el logo es un bloque para centrarlo */
+  margin: 0 auto 10px; /* Reducción del margen inferior para acercar el logo al texto */
+  width: 7%; /* Tamaño del logo basado en el porcentaje del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin-top: 40px; /* Reducción del margen superior para acercar las líneas de texto */
+}
+
+#footer h4 {
+  font-size: 16px; /* Tamaño de fuente para legibilidad */
+  line-height: 0.1; /* Reducción del espaciado de línea para juntar más el texto */
+  margin-top: 10px; /* Reducción del margen superior para acercar las líneas de texto */
+  margin-bottom: 10px; /* Reducción del margen inferior */
+}
+
+#footer .footer-link {
+  color: #fff; /* Color blanco para los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: color 0.3s ease; /* Transición suave para los cambios de color */
+}
+
+#footer .footer-link:hover {
+  color: #4bc0c8; /* Cambia el color al pasar el ratón */
+}
+
+
+/* Media Queries para adaptación a dispositivos móviles */
+@media (max-width: 768px) {
+  #footer {
+    padding: 10px; /* Reduce el padding en dispositivos móviles */
+  }
+
+  #footer .container {
+    padding: 0 10px; /* Reduce el padding para los contenedores en dispositivos móviles */
+  }
+
+  #footer .centered-logo {
+    width: 80px; /* Reduce el tamaño del logo para dispositivos móviles */
+  }
+
+  #footer h4, #footer p {
+    font-size: 12px; /* Reduce el tamaño de fuente para mejor legibilidad en pantallas pequeñas */
+  }
+}

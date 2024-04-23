@@ -1,0 +1,69 @@
+/* Estilos básicos y color de fondo */
+body {
+    color: white; /* Establece el color de texto a blanco para garantizar el contraste */
+    font-family: 'Monrope', sans-serif; /* Asegura que la fuente sea consistente */
+    background-size: 150%; /* Cubre todo el espacio del contenedor */
+    background-position: 10px 80%; 
+    color: white; /* Establece el color de texto a blanco para garantizar el contraste */
+    font-family: 'Monrope', sans-serif; /* Asegura que la fuente sea consistente */
+    background-size: 120%; /* Cubre todo el espacio del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    text-align: left;
+    font-size: 19px !important;
+  }
+
+  h1 {
+    font-family: 'dietherRound', serif;  /* Fuente específica para los títulos DIETHER TTF*/
+    font-weight: bold;
+    font-size: 70px;
+  }
+  
+
+  h2, h3, h4, h5, h6 {
+    font-family: 'dietherRound', serif;  /* Fuente específica para los títulos DIETHER TTF*/
+  }
+  
+
+  main.privacy-container {
+    background-image: url("/img/fondogradiente.png");
+    background-size: 95%;
+    width: 80%; /* Controla el ancho del contenedor para no ocupar toda la página */
+    margin: auto; /* Centra el contenedor automáticamente en la página */
+    padding: 150px; /* Espaciado interno para el contenido */
+    padding-top: 150px; /* Espaciado interno para el contenido */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: auto; /* Asegura que todo el contenido sea accesible mediante scroll */
+    min-height: calc(100vh - 40px); /* Altura mínima para cubrir casi toda la altura de la ventana */
+}
+
+/* Media Queries para ajustar la responsividad */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
+
+    main.privacy-container {
+        width: 95%; /* Aumenta el ancho para pantallas más pequeñas */
+        padding: 50px; /* Menor padding para maximizar el espacio disponible */
+        min-height: calc(100vh - 20px); /* Ajuste de altura mínima */
+    }
+
+    h1 {
+        font-size: 50px; /* Tamaño de fuente más pequeño para el título principal */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Aún más pequeño para dispositivos muy pequeños */
+    }
+
+    main.privacy-container {
+        padding: 20px; /* Menos padding para dispositivos muy pequeños */
+    }
+
+    h1 {
+        font-size: 40px; /* Tamaño de fuente mucho más pequeño para el título principal */
+    }
+}
