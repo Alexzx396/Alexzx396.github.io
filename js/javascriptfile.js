@@ -39,14 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
   placeholders.forEach((placeholder) => {
     loadContent(placeholder.id, placeholder.filePath);
   });
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  const currentUrl = window.location.pathname; // Obtiene la ruta actual
-
-  navLinks.forEach(link => {
-      if (link.href.includes(currentUrl)) {
-          link.classList.add('active'); // Añade 'active' al enlace que coincide con la URL
-      } else {
-          link.classList.remove('active'); // Asegura remover 'active' donde no se necesita
-      }
-  });
 });
