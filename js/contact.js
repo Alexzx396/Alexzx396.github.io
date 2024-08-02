@@ -25,6 +25,7 @@ document.getElementById('miFormulario').addEventListener('submit', function(even
       },
       body: JSON.stringify(data)
     })
+    
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);

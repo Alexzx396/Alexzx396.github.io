@@ -6,13 +6,13 @@
 }
 
 body {
-  background-color: #f8fffc;
+  background-color: white;
   box-sizing: border-box;
 }
 
 /* Contenedores "Acerca" y "Proyectos */
 .contenedores {
-  background-color: #c56857;
+  background-color: #001240;
   border-radius: 20px;
 }
 .contenedores .contenedor-interior {
@@ -34,7 +34,7 @@ body {
 }
 
 #navegador a {
-  color: black;
+  color: #001240;
   transition: all 1s ease-in-out;
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -48,7 +48,6 @@ body {
   position: absolute;
   width: 0;
   overflow: hidden;
-  text-decoration: overline;
 }
 #navegador a:hover::before {
   width: 100%;
@@ -65,7 +64,7 @@ body {
 }
 
 #frase .container-fluid {
-  background-color: #c56857;
+  background-color: #001240;
   border-radius: 10px;
   padding: 100px 0px;
 }
@@ -80,49 +79,14 @@ body {
   font-size: 100px;
 }
 
-#contacto .container-fluid {
-  margin-bottom: 70px;
-}
-#contacto .container-fluid h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-}
-#contacto .container-fluid p {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-}
-#contacto .container-fluid .animaciones-contacto:hover {
-  transform: scale(1.5);
-  transition: all 0.7s;
-}
-#contacto .container-fluid .input-contacto {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-}
-#contacto .container-fluid .input-contacto .form-control:focus {
-  outline: #345B48 4px solid;
-  border: 0;
-}
-#contacto .container-fluid button {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-  background-color: #DADFE5;
-  color: #345B48;
-}
-#contacto .container-fluid button:hover {
-  transform: scale(1.02);
-  transition: all 0.5s;
-  background-color: #365e4b;
-  color: white;
-}
 
 #footer {
-  background-color: #c56857;
+  background-color: #001240;
 }
 #footer p {
   font-size: 22px;
   font-family: "Cairo", sans-serif;
-  color: rgba(255, 255, 255, 0.5);
+  color: White;
 }
 
 .mi-foto {
@@ -135,4 +99,4 @@ body {
   object-fit: cover;
 }
 
-/*# sourceMappingURL=style.css.map */
+

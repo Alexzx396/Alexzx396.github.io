@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const placeholders = [
     { id: "footer-placeholder", filePath: "footer.html" },
     { id: "contacto-placeholder", filePath: "contacto.html" },
+    { id: "trabajos-placeholder", filePath: "trabajos.html" },
     { id: "skills-placeholder", filePath: "skills.html" },
     { id: "phrase-placeholder", filePath: "phrase.html" },
     { id: "project-placeholder", filePath: "project.html" },
