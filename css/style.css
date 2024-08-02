@@ -12,9 +12,11 @@ body {
 
 /* Contenedores "Acerca" y "Proyectos */
 .contenedores {
-  background-color: #001240;
+  background-color: white;
   border-radius: 20px;
 }
+
+
 .contenedores .contenedor-interior {
   background-color: #DADFE5;
   border-radius: 10px;
@@ -41,6 +43,8 @@ body {
   font-size: 20px;
   margin: 10px;
 }
+
+
 #navegador a::before {
   content: attr(data-item);
   transition: all 1s ease-in-out;
@@ -49,6 +53,8 @@ body {
   width: 0;
   overflow: hidden;
 }
+
+
 #navegador a:hover::before {
   width: 100%;
 }
@@ -77,16 +83,6 @@ body {
 #frase .container-fluid p {
   font-style: normal;
   font-size: 100px;
-}
-
-
-#footer {
-  background-color: #001240;
-}
-#footer p {
-  font-size: 22px;
-  font-family: "Cairo", sans-serif;
-  color: White;
 }
 
 .mi-foto {
