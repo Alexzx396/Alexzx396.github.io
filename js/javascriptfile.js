@@ -9,13 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
       AOS.init();
     }
   }
-
-  // Función para manejar los errores.
-  function handleError(id, error) {
-    // Si hay un error durante el fetch, se muestra en la consola.
-    console.error(`Error loading ${id}:`, error);
-  }
-
   // Función para cargar el contenido de un archivo externo.
   function loadContent(id, filePath) {
     // Se hace un fetch al archivo.
@@ -27,13 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Lista de los placeholders y los archivos correspondientes a cargar.
   const placeholders = [
-    { id: "footer-placeholder", filePath: "footer.html" },
+    { id: "acerca-placeholder", filePath: "perfil.html" },
+    { id: "generalProjects-placeholder", filePath: "generalProjects.html" },
+    { id: "webProjects-placeholder", filePath: "webProjects.html" },
     { id: "contacto-placeholder", filePath: "contacto.html" },
     { id: "trabajos-placeholder", filePath: "trabajos.html" },
     { id: "skills-placeholder", filePath: "skills.html" },
     { id: "phrase-placeholder", filePath: "phrase.html" },
-    { id: "project-placeholder", filePath: "project.html" },
-    { id: "generalProjects-placeholder", filePath: "generalProjects.html" },
+    { id: "footer-placeholder", filePath: "footer.html" },
   ];
 
   // Se inicia un fetch para cada placeholder de manera simultánea.

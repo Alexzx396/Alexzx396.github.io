@@ -10,20 +10,17 @@ body {
   box-sizing: border-box;
 }
 
-/* Contenedores "Acerca" y "Proyectos */
+/* Contenedores "Acerca" y "Proyectos" */
 .contenedores {
   background-color: white;
   border-radius: 20px;
 }
-
 
 .contenedores .contenedor-interior {
   background-color: #DADFE5;
   border-radius: 10px;
   padding: 20px;
 }
-
-
 
 .contenedores1 .contenedor-interior {
   background-color: #DADFE5;
@@ -34,43 +31,29 @@ body {
   background-position: center;
 }
 
-.contenedores2 .contenedor-interior {
-  border-radius: 10px;
-  padding: 20px;
-  background-size: cover;
-  background-position: center;
-}
-
-.contenedores3 .contenedor-interior {
-
-  border-radius: 10px;
-  padding: 20px;
-  background-size: cover;
-  background-position: center;
-}
-
+.contenedores2 .contenedor-interior,
+.contenedores3 .contenedor-interior,
 .contenedores4 .contenedor-interior {
- 
   border-radius: 10px;
   padding: 20px;
   background-size: cover;
   background-position: center;
 }
-
 
 .contenedores .contenedor-interior h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   margin-bottom: 20px;
 }
+
 .contenedores .contenedor-interior p {
   font-size: 22px;
   font-family: "Cairo", sans-serif;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   text-align: justify;
-  
 }
 
+/* Navegador */
 #navegador a {
   color: #001240;
   transition: all 1s ease-in-out;
@@ -80,58 +63,77 @@ body {
   margin: 10px;
 }
 
-
 #navegador a::before {
   content: attr(data-item);
   transition: all 1s ease-in-out;
-  color: #e49385;
+  color: rgb(73, 182, 185);
   position: absolute;
   width: 0;
   overflow: hidden;
 }
 
-
 #navegador a:hover::before {
   width: 100%;
 }
 
+/* Header personalizado */
+.custom-header {
+  padding: 10px 0;
+}
+
+.navbar-brand img {
+  max-height: 200px;
+  width: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+  padding: 5px 10px;
+}
+
+/* Animaciones */
 .animaciones:hover {
   transform: scale(1.1);
   transition: all 1s;
 }
 
+/* Sección de habilidades */
 #skills h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
 }
 
+/* Sección de frase */
 #frase .container-fluid {
   background-color: #001240;
   border-radius: 10px;
-  padding: 100px 0px;
+  padding: 100px 0;
 }
+
 #frase .container-fluid h2 {
   font-style: italic;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: #b8d6c7;
 }
+
 #frase .container-fluid p {
   font-style: normal;
   font-size: 100px;
 }
 
+/* Foto de perfil */
 .mi-foto {
   border-radius: 20%;
 }
 
+/* Carrusel */
 .carousel-item img {
-  width: 100%; 
-  height: 400px; 
+  width: 100%;
+  height: 400px;
   object-fit: cover;
 }
 
-
+/* Contenedores de proyectos */
 .proyecto-contenedor p {
   background: #f0f0f0;
   padding: 35px;
@@ -139,6 +141,22 @@ body {
   margin: 5px;
 }
 
+/* Sección de contacto */
 .contacto {
+  font-size: 3em;
+}
+
+/* Iconos */
+.iconos {
   font-size: 4em;
+  text-align: center;
+}
+
+.iconos a {
+  margin: 0 10px;
+}
+
+.iconos img {
+  width: 1em;
+  height: 1em;
 }
