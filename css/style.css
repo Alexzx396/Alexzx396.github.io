@@ -10,6 +10,18 @@ body {
   box-sizing: border-box;
 }
 
+/* Home carrucel */
+
+#home {
+  text-align: center;
+}
+
+.carousel-image {
+  width: 98%;
+  height: 89%; 
+  padding-top: 7%;
+}
+
 /* Contenedores "Acerca" y "Proyectos" */
 .contenedores {
   background-color: white;
@@ -55,12 +67,10 @@ body {
 
 /* Navegador */
 #navegador a {
-  color: #001240;
   transition: all 1s ease-in-out;
   position: relative;
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  margin: 10px;
+  font-size: 15px;
 }
 
 #navegador a::before {
@@ -82,8 +92,8 @@ body {
 }
 
 .navbar-brand img {
-  max-height: 200px;
-  width: auto;
+  max-height: 150px;
+  max-width: 150px;
 }
 
 .navbar-nav .nav-item .nav-link {
