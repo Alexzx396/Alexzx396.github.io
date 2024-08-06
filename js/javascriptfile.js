@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Aquí se establece el contenido del placeholder específico con el HTML obtenido.
     document.getElementById(id).innerHTML = data;
 
-    // Si se carga el contenido de contacto, entonces se inicializa AOS (Animate On Scroll).
     if (id === "contacto-placeholder") {
       AOS.init();
     }
