@@ -1,0 +1,114 @@
+/* Navegación fija con fondo semi-transparente */
+#navegador {
+  position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+  width: 100%; /* Asegura que la barra ocupe el ancho completo de la pantalla */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia media */
+  z-index: 1000; /* Alta prioridad en la pila de capas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); /* Sombra suave para mayor visibilidad sobre contenido */
+  padding: 10px 0; /* Añade un poco de espacio vertical dentro de la barra */
+}
+
+#navegador .container-fluid {
+  width: 90%; /* Ajusta el ancho del contenedor dentro de la barra */
+  margin: auto; /* Centra el contenedor horizontalmente */
+}
+
+
+.logo-container {
+  position: absolute; /* Posicionamiento absoluto para el logo */
+  top: 40%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste fino para centrar exactamente */
+  z-index: 10; /* Asegura que el logo esté sobre el fondo */
+}
+
+.home-image {
+  position: relative; /* Posición relativa para posicionar absolutamente los botones dentro */
+  width: 100%; /* Asegura que la imagen cubra el ancho del contenedor */
+  height: auto; /* Altura automática basada en la imagen */
+}
+
+.background-image {
+  width: 100%; /* Asegura que la imagen cubra el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina cualquier espacio extra */
+}
+
+#navegador a {
+  color: white; /* Establece el color de texto a blanco */
+  font-size: 20px; /* Tamaño de la fuente */
+  font-weight: 900; /* Peso de la fuente más grueso para mejorar la visibilidad */
+  margin: 10px;
+  text-decoration: none; /* Elimina cualquier subrayado por defecto */
+  transition: color 0.3s ease-in-out; /* Suaviza la transición de color */
+}
+
+#navegador a:hover {
+  color: #87CEFA; /* Color celeste en hover */
+}
+
+/* Ajuste de imagen y logo en la barra de navegación */
+.navbar-brand img {
+  width: 100%;
+  max-width: 180px; /* Limita el tamaño máximo del logo */
+  height: 100%;
+}
+
+/* Mejora la visibilidad de los enlaces en dispositivos pequeños */
+#navegador .nav-link {
+  font-size: 16px; /* Ajusta según sea necesario para mejorar la legibilidad */
+  margin: 5px;
+  padding: 5px;
+}
+
+.navbar-nav .nav-link h5 {
+  border-bottom: 7px solid transparent; /* Mantiene el diseño consistente sin color */
+  transition: border-color 0.3s ease; /* Suaviza la transición del color del borde */
+  padding-bottom: 20px; /* Espacio suficiente para la línea sin que toque el texto */
+}
+
+.navbar-nav .nav-link:hover h5,
+.navbar-nav .nav-link.active h5 { /* Estilos para hover y enlaces activos */
+  border-bottom: 7px solid #C779D0; /* Barra rosada para elementos activos y en hover */
+}
+
+
+
+
+/* Media query para ajustes en dispositivos pequeños */
+@media (max-width: 768px) {
+  /* Muestra el botón de navegación (hamburguesa) */
+  .navbar-toggler {
+    display: block; /* Asegura que el toggler se muestre en dispositivos pequeños */
+
+  }
+
+  /* Ajustes para el menú desplegable */
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el menú desplegable para mejorar la legibilidad */
+  }
+
+  /* Ajusta el padding del contenedor del navegador para alinear correctamente los elementos dentro de él */
+  #navegador .container-fluid {
+    padding: 0 15px; /* Ajusta el padding para dispositivos más pequeños */
+  }
+
+  /* Hace que el fondo del navegador sea transparente y elimina cualquier sombra para un look más limpio */
+  #navegador {
+    background-color: transparent; /* Elimina el fondo */
+    box-shadow: none; /* Elimina la sombra */
+  }
+
+  /* Oculta el logo en dispositivos pequeños */
+  .navbar-brand {
+    display: none; /* Oculta el logo */
+  }
+
+  .home-image img {
+    width: 100%; /* Asegura que la imagen cubra completamente el ancho */
+    height: auto;/* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio adicional si es necesario */
+  }
+
+ 
+}
