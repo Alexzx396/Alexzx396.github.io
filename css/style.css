@@ -18,7 +18,7 @@ body {
 
 .carousel-image {
   width: 98%;
-  height: 89%; 
+  height: 89%;
   padding-top: 7%;
 }
 
@@ -29,16 +29,16 @@ body {
 }
 
 .contenedores .contenedor-interior {
-  background-color: #DADFE5;
+  background-color: #dadfe5;
   border-radius: 10px;
   padding: 20px;
 }
 
 .contenedores1 .contenedor-interior {
-  background-color: #DADFE5;
+  background-color: #dadfe5;
   border-radius: 10px;
   padding: 20px;
-  background-image: url('/img-marca/fondo.png');
+  background-image: url("/img-marca/fondo.png");
   background-size: cover;
   background-position: center;
 }
@@ -164,9 +164,17 @@ body {
 
 .iconos a {
   margin: 0 10px;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 .iconos img {
   width: 1em;
   height: 1em;
+}
+
+.iconos a::before,
+.iconos a::after {
+  display: none !important;
 }
