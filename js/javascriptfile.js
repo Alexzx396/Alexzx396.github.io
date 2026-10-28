@@ -17,13 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => handleError(id, error)); // Se maneja el error.
   }
 
+  // Función para manejar errores de carga sin romper el resto de la página.
+  function handleError(id, error) {
+    console.error(`No se pudo cargar #${id}:`, error);
+  }
+
   // Lista de los placeholders y los archivos correspondientes a cargar.
   const placeholders = [
-    { id: "acerca-placeholder", filePath: "perfil.html" },
     { id: "generalProjects-placeholder", filePath: "generalProjects.html" },
     { id: "webProjects-placeholder", filePath: "webProjects.html" },
     { id: "contacto-placeholder", filePath: "contacto.html" },
-    { id: "trabajos-placeholder", filePath: "trabajos.html" },
     { id: "skills-placeholder", filePath: "skills.html" },
     { id: "phrase-placeholder", filePath: "phrase.html" },
     { id: "footer-placeholder", filePath: "footer.html" },
