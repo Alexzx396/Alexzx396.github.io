@@ -1,0 +1,10 @@
+Fuentes incluidas en esta carpeta (subconjunto latino, descargadas de Google Fonts):
+
+- DM Sans (dm-sans-latin.woff2)
+  Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+
+- JetBrains Mono (jetbrains-mono-latin.woff2)
+  Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+Ambas se distribuyen bajo la SIL Open Font License, Version 1.1.
+Texto completo de la licencia: https://openfontlicense.org/open-font-license-official-text/

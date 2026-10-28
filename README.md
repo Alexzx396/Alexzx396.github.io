@@ -1,62 +1,74 @@
-<h3 align="center">Hello there, I'm Alex 👋</h3>
-<h5 align="center">
-  <code>
-    <a href="https://www.linkedin.com/in/alex-arce-suarez-63477bb8" title="LinkedIn"><img width="22" src="https://github.com/zumrudu-anka/zumrudu-anka/blob/master/images/linkedin.svg"> LinkedIn</a></code>
-  <code><a href="https://www.instagram.com/ale_mano5/" title="Instagram Profile"><img width="22" src="https://github.com/zumrudu-anka/zumrudu-anka/blob/master/images/instagram.svg"> Instagram</a></code>
-</h5>
-<br>
 <p align="center">
-  Hi, I'm Alex Arce,  Agricultural engineer, Full stack developer (MERN and Python) & Data Science (c)
-  <br>
-  <br>
-  🎓 I graduated from the school of natural resources, Santiago/Chile. Santo Tomas University (UST).
-  <br>
-  💻  I love writing code, scientific research and everything related to technology.
-  <br>
-  🔬 I am currently looking for a job as a Remote Developer
-  <br>
-  📚  I am currently studying the Coding Dojo(Latam) - Python bootcam. also the Bootcam in Coder Houser (Argentina) Data Science
-  <br>
-  💬 Ask me about <a href="https://github.com/Alexzx396/Alexzx396" title="Issues">Here</a>
-  <br>
-  📫 How to reach me: <a href="mailto: arcealex257@gmail.com">arcealex257@gmail.com</a>
+  <img src="marca/icon-512.png" width="96" alt="Logo de Alex Arce">
 </p>
 
-<hr>
+<h1 align="center">alexarce.dev</h1>
 
+<p align="center">
+  Portafolio de <strong>Alex Arce Suarez</strong> · Ingeniero de Software · Full Stack &amp; Inteligencia Artificial<br>
+  <a href="https://alexarce.dev">alexarce.dev</a> · <a href="https://alexarce.dev/?lang=en">English version</a>
+</p>
 
-### Frontend
+---
 
-![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
-![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
-![Sass](https://img.shields.io/badge/-Sass-%23CC6699?style=flat-square&logo=sass&logoColor=ffffff)
+## Qué incluye
 
-### Frameworks
+- **Servicios**: desarrollo web a medida, AgTech, IA generativa y automatización de procesos.
+- **Experiencia** en línea de tiempo, con acceso directo al detalle de cada proyecto.
+- **Proyectos** con filtros y una ventana animada con galería de capturas y videos.
+- **Habilidades, formación y contacto**, con el CV descargable en español e inglés.
+- **Sitio bilingüe** (español / inglés) con selector ES | EN y enlace directo `?lang=en`.
 
-![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js)
-![React](https://img.shields.io/badge/-React-%23282C34?style=flat-square&logo=react)
-![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
+## Tecnología
 
-# Languages
+Sitio estático en HTML, CSS y JavaScript, sin frameworks ni dependencias. Se publica con **GitHub Pages** y el dominio `alexarce.dev` está registrado en **Cloudflare**.
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
-<img src="https://img.shields.io/badge/-Python-black?style=flat&logo=python&logoColor=white"> 
+## Estructura
 
-### Database
+```
+index.html          Página principal (todo el contenido, en español y en inglés)
+404.html            Página para direcciones que no existen
+css/style.css       Estilos
+js/main.js          Menú, idioma, filtros, ventana de proyectos y animaciones
+marca/              Marca personal: favicon, íconos, imagen para redes y manifest
+cv/                 CV en PDF (español e inglés)
+img/                Capturas de proyectos (originales) y miniaturas livianas
+img-marca/          Ilustración de la portada
+CNAME               Dominio personalizado para GitHub Pages
+```
 
-![MySQL](https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql)
-![MongoDB](https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb)
- <img src="https://img.shields.io/badge/-Firebase-FFA611?style=flat&logo=firebase&logoColor=FFFFFF">
+## Ver el sitio en tu computador
 
-### Deploy
+Desde la carpeta del proyecto, levanta un servidor local (el sitio no funciona abriendo `index.html` con doble clic):
 
-![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
-<img src="http://img.shields.io/badge/-Heroku-430098?style=flat&logo=heroku&logoColor=white">
+```bash
+python -m http.server 8000
+```
 
+y abre <http://localhost:8000>.
 
-### Editors
+## Editar textos
 
-![VS Code](http://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code)
+El español va escrito directamente en el HTML y el inglés en atributos `data-en`:
 
-<hr>
+```html
+<h2 data-en="How I can help you">Cómo puedo ayudarte</h2>
+```
+
+| Atributo | Para qué sirve |
+|---|---|
+| `data-en="..."` | Texto en inglés del elemento |
+| `data-en-html="..."` | Inglés con etiquetas HTML (por ejemplo `<strong>`) |
+| `data-en-alt`, `data-en-href`, `data-en-aria-label`, `data-en-content` | Atributos en inglés (texto alternativo, enlaces, etc.) |
+
+Al agregar o cambiar un texto, actualiza siempre las dos versiones.
+
+## Agregar un proyecto
+
+1. Guarda las capturas en `img/Proyectos personales/<proyecto>/`.
+2. Crea su miniatura de 800 px de ancho en `img/miniaturas/` con la misma ruta.
+3. Copia un bloque `<article class="project-card">` en `index.html` y ajusta textos, etiquetas (`data-tags`) e imágenes.
+
+---
+
+© Alex Arce Suarez · Santiago, Chile

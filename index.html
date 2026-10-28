@@ -14,15 +14,16 @@
     <meta property="og:title" content="Alex Arce Suarez | Ingeniero de Software · Full Stack & IA" data-en-content="Alex Arce Suarez | Software Engineer · Full Stack & AI">
     <meta property="og:description" content="Construyo productos digitales, automatizaciones y soluciones de datos desde 2020. Conoce mis servicios, proyectos y experiencia." data-en-content="Building digital products, automations and data solutions since 2020. Explore my services, projects and experience.">
     <meta property="og:url" content="https://alexarce.dev/">
-    <meta property="og:image" content="https://alexarce.dev/marca/icon-512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="Logo de Alex Arce: una A azul con una hoja verde" data-en-content="Alex Arce logo: a blue A with a green leaf">
+    <meta property="og:image" content="https://alexarce.dev/marca/og-image.png" data-en-content="https://alexarce.dev/marca/og-image-en.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alex Arce Suarez, Ingeniero de Software · Full Stack & IA" data-en-content="Alex Arce Suarez, Software Engineer · Full Stack & AI">
     <meta property="og:site_name" content="Alex Tech | Carpintero Tecnológico">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_CL">
     <meta property="og:locale:alternate" content="en_US">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://alexarce.dev/marca/og-image.png" data-en-content="https://alexarce.dev/marca/og-image-en.png">
     <!-- Marca personal -->
     <link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="marca/favicon.ico" sizes="any">
@@ -41,10 +42,8 @@
         "knowsAbout": ["Vue.js", "React", "Next.js", "Node.js", "NestJS", "Django", "Python", "TypeScript", "Google Cloud Platform", "AWS", "Docker", "PostgreSQL", "Machine Learning", "AgTech", "LLM"]
     }
     </script>
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Fuentes alojadas en el sitio: se precarga la principal -->
+    <link rel="preload" href="fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <script>document.documentElement.classList.add("js");</script>
@@ -75,7 +74,7 @@
 <!-- Header -->
 <header class="site-header">
     <nav class="nav container" aria-label="Principal" data-en-aria-label="Main">
-        <a class="brand" href="#inicio" aria-label="Alex Arce, ir al inicio" data-en-aria-label="Alex Arce, go to top">
+        <a class="brand" href="#inicio" aria-label="alexarce.dev, ir al inicio" data-en-aria-label="alexarce.dev, go to top">
             <svg class="brand-mark" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
                 <rect width="64" height="64" rx="14" fill="#0f1729"/>
                 <g class="logo-a-hop">
@@ -102,8 +101,8 @@
             <li><a class="nav-cta" href="#contacto" data-en="Contact">Contacto</a></li>
         </ul>
         <div class="lang-switch" role="group" aria-label="Idioma" data-en-aria-label="Language">
-            <button type="button" data-lang="es" aria-pressed="true" aria-label="Español">ES</button>
-            <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+            <button type="button" data-lang="es" aria-pressed="true" aria-label="ES, español" lang="es">ES</button>
+            <button type="button" data-lang="en" aria-pressed="false" aria-label="EN, English" lang="en">EN</button>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
             <span></span><span></span><span></span>
@@ -132,7 +131,7 @@
             </div>
             <div class="hero-visual">
                 <div class="avatar-frame">
-                    <img src="img-marca/alex-animado.jpg" alt="Ilustración de Alex Arce" data-en-alt="Illustration of Alex Arce" width="1000" height="1000">
+                    <img src="img-marca/alex-animado.webp" srcset="img-marca/alex-animado-420.webp 420w, img-marca/alex-animado.webp 840w" sizes="(max-width: 860px) 260px, 420px" alt="Ilustración de Alex Arce" data-en-alt="Illustration of Alex Arce" width="840" height="840" fetchpriority="high">
                 </div>
                 <div class="code-card" aria-hidden="true"
                      data-en-html="<span class='c-key'>const</span> alex = {<br>&nbsp;&nbsp;role: <span class='c-str'>&quot;Full Stack&quot;</span>,<br>&nbsp;&nbsp;focus: <span class='c-str'>&quot;Applied AI&quot;</span>,<br>&nbsp;&nbsp;since: <span class='c-num'>2020</span><br>};">
@@ -192,7 +191,7 @@
                         <li data-en="Maintenance and continuous improvement">Mantenimiento y mejora continua</li>
                     </ul>
                 </article>
-                <article class="service-card reveal">
+                <article class="service-card service-card--agtech reveal">
                     <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#i-sprout"/></svg></span>
                     <h3 data-en="Agricultural Technology (AgTech)">Tecnología para el Agro (AgTech)</h3>
                     <p data-en="As an agronomist and developer, I understand both the field and the code, and I bring technology to growers and agribusiness.">Como ingeniero agrónomo y desarrollador, entiendo tanto el campo como el código, y llevo la tecnología a productores y agroindustria.</p>
@@ -418,7 +417,7 @@
                 <!-- ECA-DISC -->
                 <article class="project-card reveal" id="p-ecadisc" data-tags="profesional movil web">
                     <button type="button" class="project-open" aria-haspopup="dialog">
-                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/ECA-DISC%20APK/ECA-DISC1.jpg" alt="" loading="lazy"><span class="thumb-badge"><svg class="icon"><use href="#i-play"/></svg> Video</span></span>
+                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/ECA-DISC%20APK/ECA-DISC1.webp" alt="" loading="lazy"><span class="thumb-badge"><svg class="icon"><use href="#i-play"/></svg> Video</span></span>
                         <span class="project-body">
                             <span class="project-meta" data-en="Professional · 2022 — 2023">Profesional · 2022 — 2023</span>
                             <span class="project-title">ECA-DISC · FCHD</span>
@@ -430,12 +429,12 @@
                     <div class="project-detail" hidden>
                         <div class="detail-media">
                             <div data-video="k-9iUxB7mgs" data-title="Demo de ECA-DISC" data-en-data-title="ECA-DISC demo"></div>
-                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA-DISC1.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA-DISC1.jpg" alt="ECA-DISC app móvil, vista 1" data-en-alt="ECA-DISC mobile app, view 1" loading="lazy">
-                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA_DISC2.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA_DISC2.jpg" alt="ECA-DISC app móvil, vista 2" data-en-alt="ECA-DISC mobile app, view 2" loading="lazy">
-                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA_DISC3.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA_DISC3.jpg" alt="ECA-DISC app móvil, vista 3" data-en-alt="ECA-DISC mobile app, view 3" loading="lazy">
-                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA-DISC1.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA-DISC1.jpg" alt="ECA-DISC web de soporte, vista 1" data-en-alt="ECA-DISC support website, view 1" loading="lazy">
-                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA_DISC2.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA_DISC2.jpg" alt="ECA-DISC web de soporte, vista 2" data-en-alt="ECA-DISC support website, view 2" loading="lazy">
-                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA_DISC3.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA_DISC3.jpg" alt="ECA-DISC web de soporte, vista 3" data-en-alt="ECA-DISC support website, view 3" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA-DISC1.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA-DISC1.webp" alt="ECA-DISC app móvil, vista 1" data-en-alt="ECA-DISC mobile app, view 1" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA_DISC2.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA_DISC2.webp" alt="ECA-DISC app móvil, vista 2" data-en-alt="ECA-DISC mobile app, view 2" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20APK/ECA_DISC3.jpg" data-thumb="img/miniaturas/ECA-DISC%20APK/ECA_DISC3.webp" alt="ECA-DISC app móvil, vista 3" data-en-alt="ECA-DISC mobile app, view 3" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA-DISC1.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA-DISC1.webp" alt="ECA-DISC web de soporte, vista 1" data-en-alt="ECA-DISC support website, view 1" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA_DISC2.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA_DISC2.webp" alt="ECA-DISC web de soporte, vista 2" data-en-alt="ECA-DISC support website, view 2" loading="lazy">
+                            <img src="img/Proyectos%20personales/ECA-DISC%20WEB%20Soporte/ECA_DISC3.jpg" data-thumb="img/miniaturas/ECA-DISC%20WEB%20Soporte/ECA_DISC3.webp" alt="ECA-DISC web de soporte, vista 3" data-en-alt="ECA-DISC support website, view 3" loading="lazy">
                         </div>
                         <div class="detail-body">
                             <p class="project-meta" data-en="Full Stack & Mobile Developer · 2022 — 2023">Desarrollador Full Stack y Móvil · 2022 — 2023</p>
@@ -455,7 +454,7 @@
                 <!-- Kingdoms of Ereloth -->
                 <article class="project-card reveal" id="p-koe" data-tags="profesional juegos">
                     <button type="button" class="project-open" aria-haspopup="dialog">
-                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/KOE-Arcadius/Arcadius-KOE1.jpg" alt="" loading="lazy"></span>
+                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/KOE-Arcadius/Arcadius-KOE1.webp" alt="" loading="lazy"></span>
                         <span class="project-body">
                             <span class="project-meta" data-en="Professional · 2022">Profesional · 2022</span>
                             <span class="project-title">Kingdoms of Ereloth</span>
@@ -466,9 +465,9 @@
                     </button>
                     <div class="project-detail" hidden>
                         <div class="detail-media">
-                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE1.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE1.jpg" alt="Kingdoms of Ereloth, mercado del pueblo" data-en-alt="Kingdoms of Ereloth, village market" loading="lazy">
-                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE2.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE2.jpg" alt="Kingdoms of Ereloth, vista 2" data-en-alt="Kingdoms of Ereloth, view 2" loading="lazy">
-                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE3.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE3.jpg" alt="Kingdoms of Ereloth, vista 3" data-en-alt="Kingdoms of Ereloth, view 3" loading="lazy">
+                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE1.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE1.webp" alt="Kingdoms of Ereloth, mercado del pueblo" data-en-alt="Kingdoms of Ereloth, village market" loading="lazy">
+                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE2.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE2.webp" alt="Kingdoms of Ereloth, vista 2" data-en-alt="Kingdoms of Ereloth, view 2" loading="lazy">
+                            <img src="img/Proyectos%20personales/KOE-Arcadius/Arcadius-KOE3.jpg" data-thumb="img/miniaturas/KOE-Arcadius/Arcadius-KOE3.webp" alt="Kingdoms of Ereloth, vista 3" data-en-alt="Kingdoms of Ereloth, view 3" loading="lazy">
                         </div>
                         <div class="detail-body">
                             <p class="project-meta" data-en="Game development · Arcadius · 2022">Desarrollo de videojuegos · Arcadius · 2022</p>
@@ -488,7 +487,7 @@
                 <!-- Arca de Mendel -->
                 <article class="project-card reveal" data-tags="personal web">
                     <button type="button" class="project-open" aria-haspopup="dialog">
-                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.jpg" alt="" loading="lazy"></span>
+                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.webp" alt="" loading="lazy"></span>
                         <span class="project-body">
                             <span class="project-meta" data-en="Personal · Founder">Personal · Fundador</span>
                             <span class="project-title">Arca de Mendel</span>
@@ -499,9 +498,9 @@
                     </button>
                     <div class="project-detail" hidden>
                         <div class="detail-media">
-                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.jpg" alt="Arca de Mendel, página de inicio" data-en-alt="Arca de Mendel, home page" loading="lazy">
-                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel2.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel2.jpg" alt="Arca de Mendel, catálogo" data-en-alt="Arca de Mendel, catalog" loading="lazy">
-                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel3.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel3.jpg" alt="Arca de Mendel, detalle de producto" data-en-alt="Arca de Mendel, product page" loading="lazy">
+                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel1.webp" alt="Arca de Mendel, página de inicio" data-en-alt="Arca de Mendel, home page" loading="lazy">
+                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel2.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel2.webp" alt="Arca de Mendel, catálogo" data-en-alt="Arca de Mendel, catalog" loading="lazy">
+                            <img src="img/Proyectos%20personales/Pagina%20JumpSeler/Jumpseller-ArcaDemendel3.jpg" data-thumb="img/miniaturas/Pagina%20JumpSeler/Jumpseller-ArcaDemendel3.webp" alt="Arca de Mendel, detalle de producto" data-en-alt="Arca de Mendel, product page" loading="lazy">
                         </div>
                         <div class="detail-body">
                             <p class="project-meta" data-en="CEO & founder · Personal project">CEO y fundador · Proyecto personal</p>
@@ -516,7 +515,7 @@
                 <!-- Bitácora Botánica -->
                 <article class="project-card reveal" data-tags="personal web">
                     <button type="button" class="project-open" aria-haspopup="dialog">
-                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Bitacora%20Botanica%201.jpg" alt="" loading="lazy"></span>
+                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Bitacora%20Botanica%201.webp" alt="" loading="lazy"></span>
                         <span class="project-body">
                             <span class="project-meta">Personal</span>
                             <span class="project-title">Bitácora Botánica</span>
@@ -527,9 +526,9 @@
                     </button>
                     <div class="project-detail" hidden>
                         <div class="detail-media">
-                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%201.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%201.jpg" alt="Bitácora Botánica, página de inicio" data-en-alt="Bitácora Botánica, home page" loading="lazy">
-                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%202.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%202.jpg" alt="Bitácora Botánica, vista 2" data-en-alt="Bitácora Botánica, view 2" loading="lazy">
-                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%204.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%204.jpg" alt="Bitácora Botánica, vista 3" data-en-alt="Bitácora Botánica, view 3" loading="lazy">
+                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%201.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%201.webp" alt="Bitácora Botánica, página de inicio" data-en-alt="Bitácora Botánica, home page" loading="lazy">
+                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%202.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%202.webp" alt="Bitácora Botánica, vista 2" data-en-alt="Bitácora Botánica, view 2" loading="lazy">
+                            <img src="img/Proyectos%20personales/Bitacora%20Botanica%204.jpg" data-thumb="img/miniaturas/Bitacora%20Botanica%204.webp" alt="Bitácora Botánica, vista 3" data-en-alt="Bitácora Botánica, view 3" loading="lazy">
                         </div>
                         <div class="detail-body">
                             <p class="project-meta" data-en="Personal project · Scientific application">Proyecto personal · Aplicación científica</p>
@@ -543,7 +542,7 @@
                 <!-- EtherDreams -->
                 <article class="project-card reveal" data-tags="personal web juegos">
                     <button type="button" class="project-open" aria-haspopup="dialog">
-                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Etherdreams/EtherDreams1.jpg" alt="" loading="lazy"></span>
+                        <span class="project-thumb thumb-fit"><img src="img/miniaturas/Etherdreams/EtherDreams1.webp" alt="" loading="lazy"></span>
                         <span class="project-body">
                             <span class="project-meta" data-en="Personal · Co-founder">Personal · Cofundador</span>
                             <span class="project-title">EtherDreams</span>
@@ -554,8 +553,8 @@
                     </button>
                     <div class="project-detail" hidden>
                         <div class="detail-media">
-                            <img src="img/Proyectos%20personales/Etherdreams/EtherDreams1.png" data-thumb="img/miniaturas/Etherdreams/EtherDreams1.jpg" alt="EtherDreams, página de inicio" data-en-alt="EtherDreams, home page" loading="lazy">
-                            <img src="img/Proyectos%20personales/Etherdreams/EtherDreams2.png" data-thumb="img/miniaturas/Etherdreams/EtherDreams2.jpg" alt="EtherDreams, vista 2" data-en-alt="EtherDreams, view 2" loading="lazy">
+                            <img src="img/Proyectos%20personales/Etherdreams/EtherDreams1.png" data-thumb="img/miniaturas/Etherdreams/EtherDreams1.webp" alt="EtherDreams, página de inicio" data-en-alt="EtherDreams, home page" loading="lazy">
+                            <img src="img/Proyectos%20personales/Etherdreams/EtherDreams2.png" data-thumb="img/miniaturas/Etherdreams/EtherDreams2.webp" alt="EtherDreams, vista 2" data-en-alt="EtherDreams, view 2" loading="lazy">
                         </div>
                         <div class="detail-body">
                             <p class="project-meta" data-en="Co-founder · Video game studio">Cofundador · Estudio de videojuegos</p>
@@ -664,5 +663,8 @@
 </dialog>
 
 <script src="js/main.js"></script>
+<!-- Cloudflare Web Analytics: estadísticas de visitas sin cookies -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0e3a5a4b0ed7461baea2fc8b184cf753"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>

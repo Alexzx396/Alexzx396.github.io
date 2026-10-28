@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | Alex Arce Suarez</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0b1220">
+    <!-- GitHub Pages sirve esta página en cualquier ruta inexistente: todas las rutas son absolutas -->
+    <link rel="icon" href="/marca/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/marca/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png">
+    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <style>
+        .not-found {
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 2rem 1.25rem;
+        }
+
+        .not-found .brand-mark {
+            width: 88px;
+            height: 88px;
+            border-radius: 22px;
+            margin: 0 auto 2rem;
+        }
+
+        .not-found-code {
+            font-size: clamp(5rem, 18vw, 9rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .not-found h1 {
+            margin-top: 1rem;
+            font-size: clamp(1.5rem, 4vw, 2.1rem);
+        }
+
+        .not-found p {
+            max-width: 30rem;
+            margin: 1rem auto 2rem;
+            color: var(--muted);
+        }
+
+        .not-found .hero-actions {
+            justify-content: center;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<main class="not-found">
+    <div>
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0f1729"/>
+            <g class="logo-a-hop">
+                <path class="logo-a" d="M17 51 L32 13 L47 51" fill="none" stroke="#3b82f6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g class="logo-leaf-spin">
+                <g class="logo-leaf-sway">
+                    <g class="logo-leaf-grow">
+                        <path d="M21 42 C24 34 34 31 44 33 C40 41 30 45 21 42 Z" fill="#4ade80"/>
+                        <path d="M23 41 C30 39 36 36.5 41 34" fill="none" stroke="#0f1729" stroke-width="1.1" stroke-linecap="round"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <div class="not-found-code"><span class="text-gradient">404</span></div>
+        <h1 data-en="This page doesn't exist">Esta página no existe</h1>
+        <p data-en="The link may be mistyped or the page may have moved. You can go back to the home page or check out my projects.">Puede que el enlace esté mal escrito o que la página se haya movido. Puedes volver al inicio o revisar mis proyectos.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="/" data-en-href="/?lang=en"><span data-en="Back to home">Volver al inicio</span></a>
+            <a class="btn btn-ghost" href="/#proyectos" data-en-href="/?lang=en#proyectos"><span data-en="View projects">Ver proyectos</span></a>
+        </div>
+    </div>
+</main>
+<script>
+    // Usa el idioma que eligió el visitante en el sitio (o el de su navegador).
+    (function () {
+        var lang = null;
+        try { lang = localStorage.getItem("lang"); } catch (e) {}
+        if (lang !== "es" && lang !== "en") lang = (navigator.language || "").toLowerCase().indexOf("en") === 0 ? "en" : "es";
+        if (lang !== "en") return;
+        document.documentElement.lang = "en";
+        document.title = "Page not found | Alex Arce Suarez";
+        document.querySelectorAll("[data-en]").forEach(function (el) { el.textContent = el.getAttribute("data-en"); });
+        document.querySelectorAll("[data-en-href]").forEach(function (el) { el.setAttribute("href", el.getAttribute("data-en-href")); });
+    })();
+</script>
+<!-- Cloudflare Web Analytics: estadísticas de visitas sin cookies -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0e3a5a4b0ed7461baea2fc8b184cf753"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
