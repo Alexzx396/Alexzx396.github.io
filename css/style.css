@@ -1177,15 +1177,6 @@ body.nav-open .site-header {
   transform: scale(1.25);
 }
 
-/* Miniaturas de video que traen un marco oscuro propio */
-.thumb-zoom img {
-  transform: scale(1.18);
-}
-
-.project-open:hover .thumb-zoom img {
-  transform: scale(1.24);
-}
-
 .project-thumb::after {
   content: "";
   position: absolute;
