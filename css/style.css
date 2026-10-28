@@ -1596,7 +1596,8 @@ body.nav-open .site-header {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  /* 300 px mínimo: 3 columnas en escritorio, para que las 9 tarjetas formen una grilla de 3x3 */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 1rem;
 }
 
