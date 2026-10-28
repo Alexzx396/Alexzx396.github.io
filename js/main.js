@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showFormStatus("formNotReady", "error");
       return;
     }
-    data.idioma = lang;
+    data.idioma = lang === "en" ? "Inglés" : "Español"; // se lee en el correo que recibe Alex
 
     submitButton.disabled = true;
     showFormStatus("formSending");
