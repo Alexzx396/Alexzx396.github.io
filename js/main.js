@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
       viewVideo: "Ver video",
       viewImage: (n) => `Ver imagen ${n}`,
       play: "Reproducir",
+      formSending: "Enviando…",
+      formSuccess: "¡Mensaje enviado! Te responderé a la brevedad.",
+      formInvalid: "Revisa los campos marcados: todos son obligatorios y el email debe ser válido.",
+      formError: "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a arcealex257@gmail.com.",
+      formNotReady: "El formulario aún no está configurado. Escríbeme a arcealex257@gmail.com.",
     },
     en: {
       menuOpen: "Open menu",
@@ -20,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
       viewVideo: "Watch video",
       viewImage: (n) => `View image ${n}`,
       play: "Play",
+      formSending: "Sending…",
+      formSuccess: "Message sent! I'll get back to you shortly.",
+      formInvalid: "Please check the highlighted fields: all are required and the email must be valid.",
+      formError: "The message could not be sent. Please try again or email me at arcealex257@gmail.com.",
+      formNotReady: "The form is not set up yet. Please email me at arcealex257@gmail.com.",
     },
   };
 
@@ -475,10 +485,59 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "ArrowRight") showSlide(current + 1);
   });
 
+  // Formulario de contacto: se envía a Web3Forms sin recargar la página.
+  const contactForm = $("#contact-form");
+  const formStatus = $(".form-status", contactForm);
+  const submitButton = $(".form-submit", contactForm);
+  let formState = null; // clave del último mensaje mostrado, para traducirlo al cambiar de idioma
+
+  function showFormStatus(key, type) {
+    formState = key ? { key, type } : null;
+    formStatus.textContent = key ? t(key) : "";
+    formStatus.className = "form-status" + (type ? ` is-${type}` : "");
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    contactForm.classList.add("was-validated");
+    if (!contactForm.checkValidity()) {
+      showFormStatus("formInvalid", "error");
+      $(":invalid", contactForm)?.focus();
+      return;
+    }
+    const data = Object.fromEntries(new FormData(contactForm));
+    if (!data.access_key || data.access_key === "WEB3FORMS_ACCESS_KEY") {
+      showFormStatus("formNotReady", "error");
+      return;
+    }
+    data.idioma = lang;
+
+    submitButton.disabled = true;
+    showFormStatus("formSending");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message || response.status);
+      contactForm.reset();
+      contactForm.classList.remove("was-validated");
+      showFormStatus("formSuccess", "success");
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      showFormStatus("formError", "error");
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+
   // Actualiza los textos generados por JavaScript al cambiar de idioma.
   function refreshDynamicText() {
     setMenu(navMenu.classList.contains("is-open"));
     filterStatus.textContent = filteredCount === null ? "" : t("showing", filteredCount);
+    if (formState) showFormStatus(formState.key, formState.type);
   }
 
   if (initial === "en") applyLanguage("en", { save: false });

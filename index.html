@@ -625,18 +625,58 @@
     <section class="section" id="contacto">
         <div class="container">
             <div class="contact-card reveal">
-                <div>
+                <div class="contact-intro">
                     <p class="section-kicker" data-en="07 · Contact">07 · Contacto</p>
                     <h2 data-en="Let's talk">¿Conversamos?</h2>
                     <p data-en="If you have a project, a job opportunity or want to know more about my work, write to me. I'll get back to you shortly.">Si tienes un proyecto, una oportunidad laboral o quieres saber más de mi trabajo, escríbeme. Respondo a la brevedad.</p>
+                    <ul class="contact-list">
+                        <li><a href="mailto:arcealex257@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span><small>Email</small>arcealex257@gmail.com</span></a></li>
+                        <li><a href="tel:+56986642616"><svg class="icon"><use href="#i-phone"/></svg><span><small data-en="Phone">Teléfono</small>+56 9 8664 2616</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/alex-arce-suarez-63477bb8/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg><span><small>LinkedIn</small>Alex Arce Suarez</span></a></li>
+                        <li><a href="https://github.com/Alexzx396" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg><span><small>GitHub</small>github.com/Alexzx396</span></a></li>
+                    </ul>
                     <a class="btn btn-ghost" href="cv/Alex-Arce-Suarez-CV.pdf" data-en-href="cv/Alex-Arce-Suarez-CV-EN.pdf" download><span data-en="Download CV">Descargar CV</span> <svg class="icon"><use href="#i-download"/></svg></a>
                 </div>
-                <ul class="contact-list">
-                    <li><a href="mailto:arcealex257@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span><small>Email</small>arcealex257@gmail.com</span></a></li>
-                    <li><a href="tel:+56986642616"><svg class="icon"><use href="#i-phone"/></svg><span><small data-en="Phone">Teléfono</small>+56 9 8664 2616</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/alex-arce-suarez-63477bb8/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg><span><small>LinkedIn</small>Alex Arce Suarez</span></a></li>
-                    <li><a href="https://github.com/Alexzx396" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg><span><small>GitHub</small>github.com/Alexzx396</span></a></li>
-                </ul>
+
+                <!-- Formulario de contacto (Web3Forms: envía el mensaje al correo de Alex) -->
+                <form class="contact-form" id="contact-form" novalidate>
+                    <input type="hidden" name="access_key" value="ecf293c3-f768-4705-8a1f-1628f911fe2d">
+                    <input type="hidden" name="subject" value="Nuevo mensaje desde alexarce.dev">
+                    <input type="hidden" name="from_name" value="Portafolio alexarce.dev">
+                    <!-- Trampa para robots: las personas no la ven y Web3Forms descarta los envíos que la marcan -->
+                    <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <h3 class="form-title" data-en="Send me a message">Envíame un mensaje</h3>
+                    <div class="form-row">
+                        <label class="field">
+                            <span data-en="Name">Nombre</span>
+                            <input type="text" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre" data-en-placeholder="Your name">
+                        </label>
+                        <label class="field">
+                            <span>Email</span>
+                            <input type="email" name="email" autocomplete="email" required maxlength="150" placeholder="tu@correo.com" data-en-placeholder="you@email.com">
+                        </label>
+                    </div>
+                    <label class="field">
+                        <span data-en="What do you need?">¿Qué necesitas?</span>
+                        <select name="servicio" required>
+                            <option value="" data-en="Choose an option">Elige una opción</option>
+                            <option value="Desarrollo web a medida" data-en="Custom web development">Desarrollo web a medida</option>
+                            <option value="AgTech" data-en="Agricultural technology (AgTech)">Tecnología para el agro (AgTech)</option>
+                            <option value="IA generativa y agentes" data-en="Generative AI & agents">IA generativa y agentes</option>
+                            <option value="Automatización e integraciones CRM" data-en="Automation & CRM integrations">Automatización e integraciones CRM</option>
+                            <option value="Oportunidad laboral" data-en="Job opportunity">Oportunidad laboral</option>
+                            <option value="Otro" data-en="Other">Otro</option>
+                        </select>
+                    </label>
+                    <label class="field">
+                        <span data-en="Message">Mensaje</span>
+                        <textarea name="message" rows="5" required minlength="10" maxlength="3000" placeholder="Cuéntame brevemente tu proyecto o consulta" data-en-placeholder="Briefly tell me about your project or question"></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary form-submit"><span data-en="Send message">Enviar mensaje</span> <svg class="icon"><use href="#i-arrow"/></svg></button>
+                    <p class="form-note" data-en="Your details are only used to reply to you.">Tus datos solo se usan para responderte.</p>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </div>
     </section>
