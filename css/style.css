@@ -1054,6 +1054,141 @@ body.nav-open .site-header {
   }
 }
 
+/* Referencias. Con una sola tarjeta queda fija y centrada; con dos o más, main.js
+   duplica la lista y agrega .is-moving para que se desplacen como la franja de tecnologías. */
+.testimonial-track {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.testimonial-card {
+  flex: 1 1 340px;
+  max-width: 760px;
+}
+
+.testimonial {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.testimonial:hover {
+  border-color: var(--border-strong);
+}
+
+/* Comilla decorativa */
+.testimonial::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.15em;
+  right: 0.25em;
+  font: 700 8rem/1 Georgia, serif;
+  color: var(--accent);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.testimonial blockquote p {
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.testimonial figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: auto;
+}
+
+.testimonial figcaption img {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--leaf);
+  box-shadow: 0 0 0 4px var(--leaf-soft);
+}
+
+.testimonial-name,
+.testimonial-role,
+.testimonial-note {
+  display: block;
+}
+
+.testimonial-name a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s;
+}
+
+.testimonial-name a:hover {
+  color: var(--accent-2);
+}
+
+.testimonial-name .icon {
+  width: 0.95em;
+  height: 0.95em;
+  color: var(--faint);
+}
+
+.testimonial-role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.testimonial-note {
+  margin-top: 0.2rem;
+  color: var(--faint);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.testimonial-note:empty {
+  display: none;
+}
+
+.testimonials.is-moving {
+  --tech-gap: 1.25rem; /* lo usa la animación marquee */
+  display: flex;
+  gap: var(--tech-gap);
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.is-moving .testimonial-track {
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  min-width: 100%;
+  justify-content: space-around;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.is-moving .testimonial-card {
+  flex: 0 0 min(400px, 82vw);
+}
+
+/* Se detiene para leer con calma */
+.is-moving:hover .testimonial-track,
+.is-moving:focus-within .testimonial-track {
+  animation-play-state: paused;
+}
+
 /* ==========================================================================
    Proyectos
    ========================================================================== */

@@ -15,6 +15,7 @@
 
 - **Servicios**: desarrollo web a medida, AgTech, IA generativa y automatización de procesos.
 - **Experiencia** en línea de tiempo, con acceso directo al detalle de cada proyecto.
+- **Referencias** de jefaturas; con dos o más, los testimonios se desplazan en bucle.
 - **Proyectos** con filtros y una ventana animada con galería de capturas y videos.
 - **Habilidades, formación y contacto**, con el CV descargable en español e inglés.
 - **Sitio bilingüe** (español / inglés) con selector ES | EN y enlace directo `?lang=en`.

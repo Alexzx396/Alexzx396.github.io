@@ -33,6 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
+  // Referencias: con dos o más se desplazan en bucle. Se duplica la lista (copia oculta para
+  // lectores de pantalla) antes de preparar la traducción, para que la copia también cambie de idioma.
+  const testimonials = $(".testimonials");
+  const testimonialTrack = testimonials && $(".testimonial-track", testimonials);
+  if (testimonialTrack && testimonialTrack.children.length > 1 && !reduceMotion) {
+    const copy = testimonialTrack.cloneNode(true);
+    copy.setAttribute("aria-hidden", "true");
+    copy.inert = true;
+    testimonials.append(copy);
+    testimonials.style.setProperty("--marquee-duration", `${testimonialTrack.children.length * 12}s`);
+    testimonials.classList.add("is-moving");
+  }
+
   // Traducción: el español está escrito en el HTML y el inglés en atributos data-en.
   //   data-en="..."          reemplaza el texto
   //   data-en-html="..."     reemplaza el contenido HTML
