@@ -264,6 +264,170 @@ document.addEventListener("DOMContentLoaded", function () {
     revealObserver.observe(element);
   });
 
+  // Mapa de habilidades: una red de puntos que gira (con parallax del puntero), nodos que
+  // orbitan sin parar y un recorrido automático por las áreas de la lista; al pasar o hacer
+  // clic sobre un área se fija unos segundos.
+  const skillMap = $(".skill-map");
+  const skillItems = $$(".skill-item");
+  const skillNodes = skillMap ? $$(".skill-node", skillMap) : [];
+  let activeSkill = 0;
+
+  function renderSkill() {
+    if (!skillMap) return;
+    const item = skillItems[activeSkill];
+    const tag = $(".skill-item-tag", item).textContent;
+    skillItems.forEach((el, i) => el.classList.toggle("is-active", i === activeSkill));
+    skillNodes.forEach((node, i) => node.classList.toggle("is-active", i === activeSkill));
+    $(".skill-core-label", skillMap).textContent = tag;
+    $(".skill-map-target", skillMap).textContent = `${tag} ${$("strong", item).textContent}`;
+  }
+
+  if (skillMap) {
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const svg = $(".skill-map-net", skillMap);
+    const mesh = $(".skill-map-mesh", skillMap);
+    const linkGroup = $(".skill-map-links", skillMap);
+    const packet = $(".skill-map-packet", skillMap);
+    const core = $(".skill-core", skillMap);
+    const links = skillNodes.map(() => linkGroup.appendChild(document.createElementNS(SVG_NS, "line")));
+
+    // Puntos repartidos sobre una esfera, cada uno unido a sus tres vecinos más cercanos.
+    const count = 42;
+    const points = Array.from({ length: count }, (_, i) => {
+      const y = 1 - (2 * (i + 0.5)) / count;
+      const r = Math.sqrt(1 - y * y);
+      const theta = i * Math.PI * (3 - Math.sqrt(5));
+      return [Math.cos(theta) * r, y, Math.sin(theta) * r];
+    });
+    const edges = new Set();
+    points.forEach((p, i) => {
+      points
+        .map((q, j) => [j, Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2])])
+        .filter(([j]) => j !== i)
+        .sort((a, b) => a[1] - b[1])
+        .slice(0, 3)
+        .forEach(([j]) => edges.add(i < j ? `${i}-${j}` : `${j}-${i}`));
+    });
+    const edgeList = [...edges].map((key) => key.split("-").map(Number));
+    const lines = edgeList.map(() => mesh.appendChild(document.createElementNS(SVG_NS, "line")));
+    const dots = points.map(() => mesh.appendChild(document.createElementNS(SVG_NS, "circle")));
+
+    // El SVG usa las medidas reales del panel para que la red no se deforme.
+    let width = 0, height = 0;
+    new ResizeObserver(() => {
+      width = skillMap.clientWidth;
+      height = skillMap.clientHeight;
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      draw(performance.now());
+    }).observe(skillMap);
+
+    let spin = 0;
+    let orbit = 0;
+    let tilt = { x: 0, y: 0 };
+    let target = { x: 0, y: 0 };
+    let lastStep = performance.now();
+
+    function draw(now) {
+      const cx0 = width / 2, cy0 = height / 2;
+      const radius = Math.min(width, height) * 0.3;
+      const cy = Math.cos(spin + tilt.y), sy = Math.sin(spin + tilt.y);
+      const cx = Math.cos(0.35 + tilt.x), sx = Math.sin(0.35 + tilt.x);
+      const projected = points.map(([x, y, z]) => {
+        const x1 = x * cy + z * sy;
+        const z1 = -x * sy + z * cy;
+        const y1 = y * cx - z1 * sx;
+        const z2 = y * sx + z1 * cx;
+        const scale = radius / (1 - z2 * 0.25);
+        return [cx0 + x1 * scale, cy0 + y1 * scale, (z2 + 1) / 2];
+      });
+      dots.forEach((dot, i) => {
+        const [x, y, depth] = projected[i];
+        dot.setAttribute("cx", x.toFixed(1));
+        dot.setAttribute("cy", y.toFixed(1));
+        dot.setAttribute("r", (1 + depth * 1.4).toFixed(2));
+        dot.setAttribute("opacity", (0.25 + depth * 0.65).toFixed(2));
+      });
+      lines.forEach((line, i) => {
+        const [a, b] = edgeList[i];
+        line.setAttribute("x1", projected[a][0].toFixed(1));
+        line.setAttribute("y1", projected[a][1].toFixed(1));
+        line.setAttribute("x2", projected[b][0].toFixed(1));
+        line.setAttribute("y2", projected[b][1].toFixed(1));
+        line.setAttribute("opacity", (0.08 + ((projected[a][2] + projected[b][2]) / 2) * 0.35).toFixed(2));
+      });
+
+      // Nodos en una elipse que gira lentamente, cada uno unido al centro.
+      const rx = width * 0.36, ry = height * 0.35;
+      skillNodes.forEach((node, i) => {
+        const angle = -Math.PI / 2 + (i / skillNodes.length) * Math.PI * 2 + orbit;
+        const x = cx0 + Math.cos(angle) * rx;
+        const y = cy0 + Math.sin(angle) * ry;
+        node.style.left = `${x}px`;
+        node.style.top = `${y}px`;
+        links[i].setAttribute("x1", cx0);
+        links[i].setAttribute("y1", cy0);
+        links[i].setAttribute("x2", x.toFixed(1));
+        links[i].setAttribute("y2", y.toFixed(1));
+        links[i].classList.toggle("is-active", i === activeSkill);
+      });
+
+      // Un pulso viaja desde el nodo activo hacia el centro.
+      const link = links[activeSkill];
+      const progress = ((now - lastStep) % 1600) / 1600;
+      const from = [+link.getAttribute("x2"), +link.getAttribute("y2")];
+      packet.setAttribute("cx", (from[0] + (cx0 - from[0]) * progress).toFixed(1));
+      packet.setAttribute("cy", (from[1] + (cy0 - from[1]) * progress).toFixed(1));
+    }
+
+    // Recorrido automático; se pausa unos segundos cuando el visitante elige un área.
+    let pausedUntil = 0;
+    function select(index, { manual = false } = {}) {
+      if (manual) pausedUntil = performance.now() + 8000;
+      if (index === activeSkill) return;
+      activeSkill = index;
+      lastStep = performance.now();
+      core.classList.remove("is-switching");
+      void core.offsetWidth;
+      core.classList.add("is-switching");
+      renderSkill();
+      draw(lastStep);
+    }
+    skillItems.forEach((item, i) => {
+      item.addEventListener("click", () => select(i, { manual: true }));
+      item.addEventListener("pointerenter", () => select(i, { manual: true }));
+    });
+
+    renderSkill();
+
+    if (!reduceMotion) {
+      packet.classList.add("is-moving");
+      skillMap.addEventListener("pointermove", (event) => {
+        const box = skillMap.getBoundingClientRect();
+        target = {
+          x: ((event.clientY - box.top) / box.height - 0.5) * -0.6,
+          y: ((event.clientX - box.left) / box.width - 0.5) * 0.6,
+        };
+      });
+      skillMap.addEventListener("pointerleave", () => (target = { x: 0, y: 0 }));
+
+      let visible = false;
+      let frame = 0;
+      function tick(now) {
+        spin += 0.0035;
+        orbit += 0.0012;
+        tilt.x += (target.x - tilt.x) * 0.06;
+        tilt.y += (target.y - tilt.y) * 0.06;
+        if (now > pausedUntil && now - lastStep > 3200) select((activeSkill + 1) % skillItems.length);
+        draw(now);
+        frame = visible ? requestAnimationFrame(tick) : 0;
+      }
+      new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible && !frame) frame = requestAnimationFrame(tick);
+      }).observe(skillMap);
+    }
+  }
+
   // Capturas completas en las tarjetas: agrega detrás una copia difuminada que rellena el espacio.
   $$(".thumb-fit > img").forEach((img) => {
     const backdrop = document.createElement("img");
@@ -551,6 +715,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setMenu(navMenu.classList.contains("is-open"));
     filterStatus.textContent = filteredCount === null ? "" : t("showing", filteredCount);
     if (formState) showFormStatus(formState.key, formState.type);
+    renderSkill();
   }
 
   if (initial === "en") applyLanguage("en", { save: false });

@@ -131,16 +131,20 @@
                 </ul>
             </div>
             <div class="hero-visual">
+                <svg class="avatar-orbit" viewBox="0 0 200 200" aria-hidden="true">
+                    <circle class="avatar-orbit-dash" cx="100" cy="100" r="97"/>
+                    <circle class="avatar-orbit-thin" cx="100" cy="100" r="88"/>
+                    <g class="avatar-orbit-spin"><circle class="avatar-orbit-dot" cx="100" cy="3" r="2.2"/><circle class="avatar-orbit-dot" cx="100" cy="197" r="1.4"/></g>
+                </svg>
+                <div class="avatar-hud" aria-hidden="true"><span>PROFILE // RUNTIME</span><span class="avatar-status">ONLINE</span></div>
                 <div class="avatar-frame">
-                    <img src="img-marca/alex-animado.webp" srcset="img-marca/alex-animado-420.webp 420w, img-marca/alex-animado.webp 840w" sizes="(max-width: 860px) 260px, 420px" alt="Ilustración de Alex Arce" data-en-alt="Illustration of Alex Arce" width="840" height="840" fetchpriority="high">
-                </div>
-                <div class="code-card" aria-hidden="true"
-                     data-en-html="<span class='c-key'>const</span> alex = {<br>&nbsp;&nbsp;role: <span class='c-str'>&quot;Full Stack&quot;</span>,<br>&nbsp;&nbsp;focus: <span class='c-str'>&quot;Applied AI&quot;</span>,<br>&nbsp;&nbsp;since: <span class='c-num'>2020</span><br>};">
-                    <span class="c-key">const</span> alex = {<br>
-                    &nbsp;&nbsp;rol: <span class="c-str">"Full Stack"</span>,<br>
-                    &nbsp;&nbsp;foco: <span class="c-str">"IA aplicada"</span>,<br>
-                    &nbsp;&nbsp;desde: <span class="c-num">2020</span><br>
-                    };
+                    <span class="avatar-corners" aria-hidden="true"></span>
+                    <div class="avatar-alt avatar-code" aria-hidden="true">
+                        <div class="avatar-code-bar"><i></i><i></i><i></i><span>alex_arce.js</span></div>
+                        <ol data-en-html="<li><span class='c'>// what&#39;s behind it</span></li><li><span class='k'>const</span> alex = {</li><li>&nbsp;&nbsp;role: <span class='s'>&quot;Full Stack&quot;</span>,</li><li>&nbsp;&nbsp;focus: <span class='s'>&quot;Applied AI&quot;</span>,</li><li>&nbsp;&nbsp;since: 2020,</li><li>};</li><li></li><li><span class='k'>const</span> result = <span class='k'>await</span> alex.build({</li><li>&nbsp;&nbsp;idea: <span class='s'>&quot;your business&quot;</span>,</li><li>&nbsp;&nbsp;stack: [<span class='s'>&quot;Vue&quot;</span>, <span class='s'>&quot;NestJS&quot;</span>, <span class='s'>&quot;Python&quot;</span>],</li><li>&nbsp;&nbsp;cloud: <span class='s'>&quot;GCP&quot;</span>,</li><li>});</li><li></li><li>result.status; <span class='c'>// &quot;in production&quot; ✓</span></li><li><span class='avatar-caret'></span></li>"><li><span class="c">// lo que hay detrás</span></li><li><span class="k">const</span> alex = {</li><li>&nbsp;&nbsp;rol: <span class="s">&quot;Full Stack&quot;</span>,</li><li>&nbsp;&nbsp;foco: <span class="s">&quot;IA aplicada&quot;</span>,</li><li>&nbsp;&nbsp;desde: 2020,</li><li>};</li><li></li><li><span class="k">const</span> resultado = <span class="k">await</span> alex.construir({</li><li>&nbsp;&nbsp;idea: <span class="s">&quot;tu negocio&quot;</span>,</li><li>&nbsp;&nbsp;stack: [<span class="s">&quot;Vue&quot;</span>, <span class="s">&quot;NestJS&quot;</span>, <span class="s">&quot;Python&quot;</span>],</li><li>&nbsp;&nbsp;cloud: <span class="s">&quot;GCP&quot;</span>,</li><li>});</li><li></li><li>resultado.estado; <span class="c">// &quot;en producción&quot; ✓</span></li><li><span class="avatar-caret"></span></li></ol>
+                    </div>
+                    <span class="avatar-scan" aria-hidden="true"></span>
+                    <img src="img-marca/alex-real.webp" srcset="img-marca/alex-real-420.webp 420w, img-marca/alex-real.webp 840w" sizes="(max-width: 860px) 260px, 420px" alt="Alex Arce Suarez" width="840" height="840" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -610,16 +614,61 @@
                 <p class="section-kicker" data-en="06 · Skills">06 · Habilidades</p>
                 <h2 data-en="What I work with">Con qué trabajo</h2>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card reveal"><h3 data-en="Languages">Lenguajes</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>SQL</li></ul></div>
-                <div class="skill-card reveal"><h3>Frontend</h3><ul class="chips"><li data-en="Vue.js 2 & 3">Vue.js 2 y 3</li><li>React</li><li>Next.js</li><li>HTML</li><li>CSS/SASS</li></ul></div>
-                <div class="skill-card reveal"><h3>Backend</h3><ul class="chips"><li>Node.js</li><li>Express</li><li>NestJS</li><li>Django</li><li>Flask</li><li>Spring Boot</li><li data-en="REST APIs">APIs REST</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Databases, Cloud & DevOps">Bases de datos, cloud y DevOps</h3><ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>MySQL</li><li>Firestore</li><li>Redis</li><li>Google Cloud (GCP)</li><li>AWS</li><li>Hostinger</li><li>Docker</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Security & Data Protection">Seguridad y protección de datos</h3><ul class="chips"><li data-en="JWT & OAuth 2.0">JWT y OAuth 2.0</li><li data-en="Passwords hashed with bcrypt">Contraseñas con bcrypt</li><li data-en="Role-based access control (RBAC)">Control de acceso por roles (RBAC)</li><li>Row-Level Security</li><li data-en="AES-256 encryption">Cifrado AES-256</li><li data-en="Security headers & CORS">Cabeceras de seguridad y CORS</li><li>Rate limiting</li><li data-en="Data protection (Chilean Law 21.719)">Protección de datos (Ley 21.719)</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Data & AI">Datos e IA</h3><ul class="chips"><li data-en="Machine Learning with Python">Machine Learning con Python</li><li>LLMs</li><li>Power BI</li><li>Databricks</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Mobile">Móvil</h3><ul class="chips"><li>React Native</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Automation & Platforms">Automatización y plataformas</h3><ul class="chips"><li>Clienty</li><li data-en="Queop (surveys & ratings)">Queop (encuestas y calificaciones)</li><li>Monday</li><li data-en="CRM integrations">Integraciones CRM</li><li>Thinkific (Liquid)</li><li>Google Workspace</li><li>Microsoft 365</li></ul></div>
-                <div class="skill-card reveal"><h3 data-en="Methodologies">Metodologías</h3><ul class="chips"><li>Scrum (SMPC®, SFPC®)</li></ul></div>
+            <div class="skills-showcase">
+                <figure class="skill-map reveal" aria-hidden="true">
+                    <div class="skill-map-head"><span>STACK // RUNTIME</span><span data-en="NODES: 8 · FOCUS: AI">NODOS: 8 · FOCO: IA</span></div>
+                    <svg class="skill-map-net">
+                        <g class="skill-map-mesh"></g>
+                        <g class="skill-map-links"></g>
+                        <circle class="skill-map-packet" r="3"/>
+                    </svg>
+                    <div class="skill-map-nodes">
+                        <span class="skill-node" style="--x: 50.0%; --y: 15.0%" data-en="[AI]">[IA]</span>
+                        <span class="skill-node" style="--x: 75.5%; --y: 25.3%">[FRONTEND]</span>
+                        <span class="skill-node" style="--x: 86.0%; --y: 50.0%">[BACKEND]</span>
+                        <span class="skill-node" style="--x: 75.5%; --y: 74.7%">[LANG]</span>
+                        <span class="skill-node" style="--x: 50.0%; --y: 85.0%" data-en="[DATA]">[DATOS]</span>
+                        <span class="skill-node" style="--x: 24.5%; --y: 74.7%">[CLOUD]</span>
+                        <span class="skill-node" style="--x: 14.0%; --y: 50.0%" data-en="[SECURITY]">[SEGURIDAD]</span>
+                        <span class="skill-node" style="--x: 24.5%; --y: 25.3%">[AUTO]</span>
+                    </div>
+                    <div class="skill-core"><span class="skill-core-ring"></span><span class="skill-core-label">[IA]</span></div>
+                    <figcaption class="skill-map-foot"><span><span data-en="NODE:">NODO:</span> <strong class="skill-map-target">[IA] Inteligencia Artificial</strong></span><span data-en="INTERACTIVE · PARALLAX">INTERACTIVO · PARALLAX</span></figcaption>
+                </figure>
+                <ul class="skill-list" role="list">
+                    <li class="skill-item is-active">
+                        <p class="skill-item-head"><span class="skill-item-tag" data-en="[AI]">[IA]</span> <strong data-en="Artificial Intelligence">Inteligencia Artificial</strong></p>
+                        <ul class="chips"><li>LLMs</li><li data-en="Generative AI & agents">IA generativa y agentes</li><li data-en="Machine Learning with Python">Machine Learning con Python</li><li data-en="Process automation">Automatización de procesos</li><li data-en="Master's in AI (in progress)">Máster en IA (en curso)</li></ul>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-item-head"><span class="skill-item-tag">[FRONTEND]</span> <strong data-en="Frontend & Mobile">Frontend y móvil</strong></p>
+                        <ul class="chips"><li data-en="Vue.js 2 & 3">Vue.js 2 y 3</li><li>React</li><li>Next.js</li><li>React Native</li><li>HTML</li><li>CSS/SASS</li></ul>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-item-head"><span class="skill-item-tag">[BACKEND]</span> <strong data-en="Backend & APIs">Backend y APIs</strong></p>
+                        <ul class="chips"><li>Node.js</li><li>Express</li><li>NestJS</li><li>Django</li><li>Flask</li><li>Spring Boot</li><li data-en="REST APIs">APIs REST</li></ul>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-item-head"><span class="skill-item-tag">[LANG]</span> <strong data-en="Languages">Lenguajes</strong></p>
+                        <ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>SQL</li></ul>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-item-head"><span class="skill-item-tag" data-en="[DATA]">[DATOS]</span> <strong data-en="Data & Analytics">Datos y analítica</strong></p>
+                        <ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>MySQL</li><li>Firestore</li><li>Redis</li><li>Power BI</li><li>Databricks</li></ul>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-item-head"><span class="skill-item-tag">[CLOUD]</span> <strong data-en="Cloud & DevOps">Cloud y DevOps</strong></p>
+                        <ul class="chips"><li>Google Cloud (GCP)</li><li>AWS</li><li>Docker</li><li>Hostinger</li></ul>
+                    </li>
+                    <li class="skill-item skill-item--wide">
+                        <p class="skill-item-head"><span class="skill-item-tag" data-en="[SECURITY]">[SEGURIDAD]</span> <strong data-en="Security & Data Protection">Seguridad y protección de datos</strong></p>
+                        <ul class="chips"><li data-en="JWT & OAuth 2.0">JWT y OAuth 2.0</li><li data-en="Passwords hashed with bcrypt">Contraseñas con bcrypt</li><li data-en="Role-based access control (RBAC)">Control de acceso por roles (RBAC)</li><li>Row-Level Security</li><li data-en="AES-256 encryption">Cifrado AES-256</li><li data-en="Security headers & CORS">Cabeceras de seguridad y CORS</li><li>Rate limiting</li><li data-en="Data protection (Chilean Law 21.719)">Protección de datos (Ley 21.719)</li></ul>
+                    </li>
+                    <li class="skill-item skill-item--wide">
+                        <p class="skill-item-head"><span class="skill-item-tag">[AUTO]</span> <strong data-en="Automation & Methodologies">Automatización y metodologías</strong></p>
+                        <ul class="chips"><li>Clienty</li><li data-en="Queop (surveys & ratings)">Queop (encuestas y calificaciones)</li><li>Monday</li><li data-en="CRM integrations">Integraciones CRM</li><li>Thinkific (Liquid)</li><li>Google Workspace</li><li>Microsoft 365</li><li>Scrum (SMPC®, SFPC®)</li></ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
